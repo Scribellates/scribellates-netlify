@@ -1,0 +1,8 @@
+[build]
+  command = "rm -fr public && npm run build"
+  publish = "public"
+
+[dev]
+  command = "npm run dev"
+  port = 8888
+  targetPort = 8080
