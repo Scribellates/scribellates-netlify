@@ -1,2 +1,25 @@
-/node_modules
+# Dépendances
+node_modules/
 package-lock.json
+
+# Build Eleventy
+public/
+
+# Caches Eleventy / outils
+.cache/
+.tmp/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Front Matter CMS (extension VS Code)
+.frontmatter/
