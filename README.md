@@ -28,3 +28,7 @@ npm run dev
 - `src/` : Contient les fichiers sources du projet, y compris les pages, les styles et les composants.
 - `public/` : Contient les fichiers statiques qui seront copiés tels quels dans le dossier de distribution.
 - `documentations/` : Contient les fichiers de directions de conception.
+
+# Wireframes
+
+![liens wireframes](https://www.figma.com/design/hMWDt2JdikfHJ5dFyrFmVY/Sans-titre?node-id=0-1&t=FS7Gd3u4PIl83a0o-1)
