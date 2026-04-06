@@ -1,0 +1,44 @@
+/* ── Navbar ── */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem 2rem;
+  background-color: var(--color-primary);
+  border-bottom: 3px solid var(--color-ocre);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-bg);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--color-ocre);
+}

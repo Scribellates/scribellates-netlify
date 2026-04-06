@@ -1,0 +1,11 @@
+<div class="col">
+  <h2 class="col-title">{{ colonnes.actualites.titre }}</h2>
+  <div class="card-list">
+    {% for actu in colonnes.actualites.items %}
+    <div class="card card-actu">
+      <h3 class="card-actu-titre">{{ actu.titre }}</h3>
+      <p class="card-actu-extrait">{{ actu.extrait }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>

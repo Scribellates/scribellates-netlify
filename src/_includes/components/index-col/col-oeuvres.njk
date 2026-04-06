@@ -1,0 +1,16 @@
+<div class="col">
+  <h2 class="col-title">{{ colonnes.oeuvres.titre }}</h2>
+  <div class="card-list">
+    {% for oeuvre in colonnes.oeuvres.items %}
+    <div class="card card-oeuvre">
+      <img class="card-oeuvre-image" src="{{ oeuvre.image }}" alt="Couverture de {{ oeuvre.titre }}" />
+      <div class="card-oeuvre-body">
+        <h3 class="card-oeuvre-titre">{{ oeuvre.titre }}</h3>
+        <p class="card-oeuvre-auteur">{{ oeuvre.auteur }}</p>
+        <p class="card-oeuvre-extrait">{{ oeuvre.extrait }}</p>
+        <span class="card-oeuvre-statut">{{ oeuvre.statut }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
