@@ -1,6 +1,6 @@
 ---
 title: Hello World
-layout: base.njk
+layout: navbar.njk
 ---
 
 Hello World !

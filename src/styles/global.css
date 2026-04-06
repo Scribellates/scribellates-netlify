@@ -1,3 +1,16 @@
+/* ── Variables ── */
+:root {
+  --color-primary:    #1E3557; /* bleu encre */
+  --color-bg:         #FFFFFF; /* fond blanc */
+  --color-ocre:       #D9A441; /* ocre clair */
+  --color-moss:       #6E845C; /* vert mousse */
+  --color-night:      #1F2A32; /* bleu nuit pétrole */
+
+  /* Typographie — "Libra Serif Modern" utilisée pour le logo */
+  --font-serif: "Libra Serif Modern", Georgia, serif;
+  --font-sans:  system-ui, sans-serif;
+}
+
 /* ── Reset ── */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -7,7 +20,9 @@
 
 /* ── Base ── */
 body {
-  font-family: sans-serif;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-night);
 }
 
 /* ── Navbar ── */
@@ -16,8 +31,8 @@ nav {
   align-items: center;
   gap: 3rem;
   padding: 1rem 2rem;
-  background-color: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: var(--color-primary);
+  border-bottom: 3px solid var(--color-ocre);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -44,7 +59,7 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: #222;
+  color: var(--color-bg);
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -52,7 +67,7 @@ nav {
 }
 
 .nav-links a:hover {
-  color: #6b48ff;
+  color: var(--color-ocre);
 }
 
 /* ── Contenu principal ── */
