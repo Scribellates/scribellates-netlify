@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title or "Scribellates" }}</title>
+  <link rel="stylesheet" href="/styles/global.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/images/logo_couleur_texte.png" alt="Scribellates logo" />
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="/">Oeuvres</a></li>
+      <li><a href="/a-propos/">Auteurs</a></li>
+      <li><a href="/portfolio/">Actualités</a></li>
+      <li><a href="/contact/">Nous rejoindre</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+</body>
+</html>
