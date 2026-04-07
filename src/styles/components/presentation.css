@@ -41,3 +41,35 @@
   object-fit: cover;
   border-radius: 8px;
 }
+
+/* -- Responsive -- */
+
+/* Tablette */
+@media (max-width: 1024px) {
+  .presentation-title {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .presentation {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .presentation-title {
+    font-size: 1.75rem;
+  }
+
+  .presentation-text {
+    font-size: 1rem;
+  }
+
+  .presentation-image img {
+    height: auto;
+    width: 60%;
+    max-width: 180px;
+  }
+}

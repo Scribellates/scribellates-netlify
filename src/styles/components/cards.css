@@ -110,3 +110,25 @@
   line-height: 1.5;
   color: var(--color-night);
 }
+
+/* -- Responsive -- */
+
+/* Tablette et mobile : colonnes empilées */
+@media (max-width: 1024px) {
+  .two-cols {
+    flex-direction: column;
+    padding: 2rem 1.25rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .two-cols {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .col-title {
+    font-size: 1.25rem;
+  }
+}

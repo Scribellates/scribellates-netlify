@@ -29,3 +29,10 @@ body {
 main {
   padding: 2rem;
 }
+
+/* -- Responsive -- */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+}
