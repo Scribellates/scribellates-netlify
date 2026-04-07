@@ -1,0 +1,134 @@
+/* ── Section deux colonnes ── */
+.two-cols {
+  display: flex;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.col-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-ocre);
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Card base ── */
+.card {
+  background-color: var(--color-bg);
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(30, 53, 87, 0.12);
+  transform: translateY(-2px);
+}
+
+/* ── Card oeuvre ── */
+.card-oeuvre {
+  display: flex;
+  align-items: stretch;
+}
+
+.card-oeuvre-image {
+  width: 90px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.card-oeuvre-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem;
+  flex: 1;
+}
+
+.card-oeuvre-titre {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.card-oeuvre-auteur {
+  font-size: 0.85rem;
+  color: var(--color-moss);
+  font-style: italic;
+}
+
+.card-oeuvre-extrait {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-night);
+  flex: 1;
+}
+
+.card-oeuvre-statut {
+  font-size: 0.75rem;
+  color: var(--color-bg);
+  background-color: var(--color-primary);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
+/* ── Card actualité ── */
+.card-actu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+}
+
+.card-actu-titre {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.card-actu-extrait {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-night);
+}
+
+/* -- Responsive -- */
+
+/* Tablette et mobile : colonnes empilées */
+@media (max-width: 1024px) {
+  .two-cols {
+    flex-direction: column;
+    padding: 2rem 1.25rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .two-cols {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .col-title {
+    font-size: 1.25rem;
+  }
+}

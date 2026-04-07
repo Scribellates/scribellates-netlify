@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title or "Scribellates" }}</title>
+  <link rel="stylesheet" href="/styles/global.css" />
+  <link rel="stylesheet" href="/styles/components/navbar.css" />
+  <link rel="stylesheet" href="/styles/components/presentation.css" />
+  <link rel="stylesheet" href="/styles/components/text-section.css" />
+  <link rel="stylesheet" href="/styles/components/cards.css" />
+</head>
+<body>
+
+  {% include "components/navbar/navbar.njk" %}
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+</body>
+</html>
