@@ -1,0 +1,16 @@
+<section class="oeuvres-grid-section">
+  <h1 class="oeuvres-grid-title">Oeuvres</h1>
+  <div class="card-grid">
+    {% for oeuvre in oeuvres %}
+    <div class="card card-oeuvre card-oeuvre--grid">
+      <img class="card-oeuvre-image card-oeuvre-image--grid" src="{{ oeuvre.image }}" alt="Couverture de {{ oeuvre.titre }}" />
+      <div class="card-oeuvre-body">
+        <h3 class="card-oeuvre-titre">{{ oeuvre.titre }}</h3>
+        <p class="card-oeuvre-auteur">{{ oeuvre.auteur }}</p>
+        <p class="card-oeuvre-extrait">{{ oeuvre.extrait }}</p>
+        <span class="card-oeuvre-statut">{{ oeuvre.statut }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
