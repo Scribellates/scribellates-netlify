@@ -111,6 +111,36 @@
   color: var(--color-night);
 }
 
+/* ── Page oeuvres : grille ── */
+.oeuvres-grid-section {
+  padding: 3rem 2rem;
+}
+
+.oeuvres-grid-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-ocre);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-oeuvre--grid {
+  flex-direction: column;
+}
+
+.card-oeuvre-image--grid {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
 /* -- Responsive -- */
 
 /* Tablette et mobile : colonnes empilées */
