@@ -91,6 +91,14 @@
   margin-top: 0.25rem;
 }
 
+.card-oeuvre-statut--terminé {
+  background-color: #2e7d32;
+}
+
+.card-oeuvre-statut--en-cours {
+  background-color: #1565c0;
+}
+
 /* ── Card actualité ── */
 .card-actu {
   display: flex;
@@ -114,6 +122,36 @@
 /* ── Page oeuvres : grille ── */
 .oeuvres-grid-section {
   padding: 3rem 2rem;
+}
+
+/* ── Barre de recherche ── */
+.oeuvres-search-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.oeuvres-search-input {
+  width: 100%;
+  max-width: 480px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  color: var(--color-night);
+  background-color: var(--color-bg);
+  border: 2px solid #e5e5e5;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.oeuvres-search-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(30, 53, 87, 0.12);
+}
+
+.oeuvres-no-results {
+  color: var(--color-night);
+  font-style: italic;
+  margin-top: 1rem;
 }
 
 .oeuvres-grid-title {

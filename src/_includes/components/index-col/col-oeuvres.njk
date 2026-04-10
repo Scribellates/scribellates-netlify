@@ -8,7 +8,7 @@
         <h3 class="card-oeuvre-titre">{{ oeuvre.data.titre }}</h3>
         <p class="card-oeuvre-auteur">{{ oeuvre.data.auteur }}</p>
         <p class="card-oeuvre-extrait">{{ oeuvre.data.description }}</p>
-        <span class="card-oeuvre-statut">{{ oeuvre.data.statut }}</span>
+        <span class="card-oeuvre-statut card-oeuvre-statut--{{ oeuvre.data.statut | replace(' ', '-') | lower }}">{{ oeuvre.data.statut }}</span>
       </div>
     </div>
     {% endfor %}

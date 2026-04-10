@@ -1,16 +1,51 @@
 <section class="oeuvres-grid-section">
+  <div class="oeuvres-search-wrapper">
+    <input
+      type="search"
+      id="oeuvres-search"
+      class="oeuvres-search-input"
+      placeholder="Rechercher une œuvre, un auteur…"
+      aria-label="Rechercher une œuvre"
+    />
+  </div>
   <h1 class="oeuvres-grid-title">Oeuvres</h1>
-  <div class="card-grid">
+  <div class="card-grid" id="oeuvres-card-grid">
     {% for oeuvre in collections.oeuvres %}
-    <div class="card card-oeuvre card-oeuvre--grid">
+    <div class="card card-oeuvre card-oeuvre--grid"
+         data-titre="{{ oeuvre.data.titre | lower }}"
+         data-auteur="{{ oeuvre.data.auteur | lower }}">
       <img class="card-oeuvre-image card-oeuvre-image--grid" src="{{ oeuvre.data.image }}" alt="Couverture de {{ oeuvre.data.titre }}" />
       <div class="card-oeuvre-body">
         <h3 class="card-oeuvre-titre">{{ oeuvre.data.titre }}</h3>
         <p class="card-oeuvre-auteur">{{ oeuvre.data.auteur }}</p>
         <p class="card-oeuvre-extrait">{{ oeuvre.data.description }}</p>
-        <span class="card-oeuvre-statut">{{ oeuvre.data.statut }}</span>
+        <span class="card-oeuvre-statut card-oeuvre-statut--{{ oeuvre.data.statut | replace(' ', '-') | lower }}">{{ oeuvre.data.statut }}</span>
       </div>
     </div>
     {% endfor %}
   </div>
+  <p class="oeuvres-no-results" id="oeuvres-no-results" hidden>Aucun résultat.</p>
 </section>
+
+<script>
+  (function () {
+    const input = document.getElementById('oeuvres-search');
+    const cards = document.querySelectorAll('#oeuvres-card-grid .card-oeuvre--grid');
+    const noResults = document.getElementById('oeuvres-no-results');
+
+    input.addEventListener('input', function () {
+      const query = this.value.toLowerCase().trim();
+      let visible = 0;
+
+      cards.forEach(function (card) {
+        const match =
+          card.dataset.titre.includes(query) ||
+          card.dataset.auteur.includes(query);
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+
+      noResults.hidden = visible > 0;
+    });
+  })();
+</script>
