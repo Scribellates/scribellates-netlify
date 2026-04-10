@@ -49,7 +49,7 @@
 }
 
 .card-oeuvre-image {
-  width: 90px;
+  width: 120px;
   flex-shrink: 0;
   object-fit: cover;
 }
@@ -127,18 +127,39 @@
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+  gap: 2rem;
 }
 
 .card-oeuvre--grid {
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .card-oeuvre-image--grid {
-  width: 100%;
+  width: 160px;
   height: 240px;
+  flex-shrink: 0;
   object-fit: cover;
+}
+
+.card-oeuvre--grid .card-oeuvre-body {
+  padding: 1.25rem 1.4rem;
+}
+
+.card-oeuvre--grid .card-oeuvre-titre {
+  font-size: 1.2rem;
+}
+
+.card-oeuvre--grid .card-oeuvre-auteur {
+  font-size: 0.95rem;
+}
+
+.card-oeuvre--grid .card-oeuvre-extrait {
+  font-size: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* -- Responsive -- */
