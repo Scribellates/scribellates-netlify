@@ -221,3 +221,59 @@
     font-size: 1.25rem;
   }
 }
+
+/* ── Responsive : page oeuvres ── */
+
+/* Tablette (≤ 900px) */
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .oeuvres-grid-section {
+    padding: 2rem 1.25rem;
+  }
+
+  .oeuvres-grid-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .card-oeuvre--grid .card-oeuvre-extrait {
+    display: none;
+  }
+
+  .card-oeuvre-image--grid {
+    width: 130px;
+    height: 195px;
+  }
+}
+
+/* Mobile (≤ 540px) */
+@media (max-width: 540px) {
+  .oeuvres-grid-section {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .oeuvres-search-input {
+    max-width: 100%;
+  }
+
+  .card-oeuvre--grid {
+    flex-direction: column;
+  }
+
+  .card-oeuvre-image--grid {
+    width: 100%;
+    height: 220px;
+  }
+
+  .card-oeuvre--grid .card-oeuvre-body {
+    padding: 0.9rem 1rem;
+  }
+
+  .card-oeuvre--grid .card-oeuvre-titre {
+    font-size: 1.05rem;
+  }
+}
