@@ -8,4 +8,17 @@ description: |
 statut: Terminé
 image: /images/covers/onigard-solitude.png
 dateAjout: 2026-04-10
+liens:
+  - label: Lire sur Wattpad
+    url: https://www.wattpad.com/story/295799746-onigard-solitude
+    logo: /images/sites/wattpad.png
+sections:
+  - title: L'univers d'Onigard
+    content: |
+        Ceci est le premier tome des Chasseurs de l'Autre Monde, une trilogie au sein de l'univers d'Onigard suivant les âmes égarés de l'Autre Monde.
+        Tome 1 : Prequelle
+        Tome 2 : Apparition
+        Tome 3 : Solitude
+
+        🚩 Cette œuvre n'est pas un point d'entrée à l'univers d'Onigard, il est vivement conseillé d'avoir lu au moins une autre œuvre appartenant à l'univers. 🚩
 ---

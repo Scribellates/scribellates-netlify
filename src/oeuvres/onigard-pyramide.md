@@ -9,4 +9,12 @@ description: |
 statut: Terminé
 image: /images/covers/onigard-pyramide.png
 dateAjout: 2026-04-10
+liens:
+  - label: Lire sur Wattpad
+    url: https://www.wattpad.com/story/328376239-onigard-la-pyramide-de-dieu-r%C3%A9%C3%A9criture
+    logo: /images/sites/wattpad.png
+sections:
+  - title: L'univers d'Onigard
+    content: |
+        ⚠️ Cette œuvre ne nécessite pas d'avoir lu d'autres œuvres de l'univers d'Onigard pour être comprise et appréciée dans sa globalité. Cependant, il vous manquera probablement quelques clés pour comprendre ses subtilités. ⚠️ 
 ---

@@ -4,8 +4,8 @@
       type="search"
       id="oeuvres-search"
       class="oeuvres-search-input"
-      placeholder="Rechercher une œuvre, un auteur…"
-      aria-label="Rechercher une œuvre"
+      placeholder="Rechercher une œuvre ou un auteur…"
+      aria-label="Rechercher une œuvre ou un auteur"
     />
     <div class="oeuvres-filter-group" role="group" aria-label="Filtrer par statut">
       <button class="oeuvres-filter-btn oeuvres-filter-btn--active" data-filter="">Tous</button>
@@ -16,7 +16,7 @@
   <h1 class="oeuvres-grid-title">Oeuvres</h1>
   <div class="card-grid" id="oeuvres-card-grid">
     {% for oeuvre in collections.oeuvres %}
-    <div class="card card-oeuvre card-oeuvre--grid"
+    <a href="{{ oeuvre.url }}" class="card card-oeuvre card-oeuvre--grid"
          data-titre="{{ oeuvre.data.titre | lower }}"
          data-auteur="{{ oeuvre.data.auteur | lower }}"
          data-statut="{{ oeuvre.data.statut | replace(' ', '-') | lower }}">
@@ -27,7 +27,7 @@
         <p class="card-oeuvre-extrait">{{ oeuvre.data.description }}</p>
         <span class="card-oeuvre-statut card-oeuvre-statut--{{ oeuvre.data.statut | replace(' ', '-') | lower }}">{{ oeuvre.data.statut }}</span>
       </div>
-    </div>
+    </a>
     {% endfor %}
   </div>
   <p class="oeuvres-no-results" id="oeuvres-no-results" hidden>Aucun résultat.</p>

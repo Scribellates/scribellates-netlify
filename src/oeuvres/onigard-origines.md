@@ -6,4 +6,8 @@ description: |
 statut: Terminé
 image: /images/covers/onigard-origines.png
 dateAjout: 2026-04-10
+liens:
+  - label: Lire sur Wattpad
+    url: https://www.wattpad.com/story/265841801-onigard-origines
+    logo: /images/sites/wattpad.png
 ---

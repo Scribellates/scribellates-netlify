@@ -1,5 +1,5 @@
 ---
-titre: Lumen Fortuna
+titre: Lumen Fortuna - Destin Incertain
 auteur: Zorawuco
 description: |
     Jusqu'où êtes-vous prêts à aller pour réaliser ce qu'il y a de plus cher à vos yeux ?
@@ -14,4 +14,8 @@ description: |
 statut: Terminé
 image: /images/covers/lumen-fortuna.jpg
 dateAjout: 2026-04-10
+liens:
+  - label: Lire sur Wattpad
+    url: https://www.wattpad.com/story/350990744-lumen-fortuna-destin-incertain
+    logo: /images/sites/wattpad.png
 ---

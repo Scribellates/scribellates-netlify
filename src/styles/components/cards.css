@@ -28,6 +28,12 @@
 }
 
 /* ── Card base ── */
+a.card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .card {
   background-color: var(--color-bg);
   border: 1px solid #e5e5e5;
@@ -43,7 +49,8 @@
 }
 
 /* ── Card oeuvre ── */
-.card-oeuvre {
+.card-oeuvre,
+a.card-oeuvre {
   display: flex;
   align-items: stretch;
 }
@@ -78,7 +85,11 @@
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--color-night);
-  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-height: 4.5em;
 }
 
 .card-oeuvre-statut {
@@ -230,6 +241,246 @@
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* ── Page individuelle d'une oeuvre ── */
+.oeuvre-single {
+  display: flex;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  align-items: flex-start;
+}
+
+/* Colonne gauche : 75% */
+.oeuvre-single-main {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Colonne droite : 25% */
+.oeuvre-single-aside {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: 2rem;
+}
+
+/* Titre */
+.oeuvre-single-titre {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+/* Description */
+.oeuvre-single-description {
+  color: var(--color-night);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+/* Sections personnalisées */
+.oeuvre-single-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.oeuvre-single-section-titre {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--color-ocre);
+}
+
+.oeuvre-single-section-content {
+  color: var(--color-night);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Liens de lecture */
+.oeuvre-single-liens {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.oeuvre-single-liens-titre {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--color-ocre);
+}
+
+.oeuvre-single-liens-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.oeuvre-single-lien {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.oeuvre-single-lien:hover {
+  background-color: var(--color-night);
+}
+
+.oeuvre-single-lien--logo {
+  padding: 0;
+  background-color: transparent;
+}
+
+.oeuvre-single-lien--logo:hover {
+  background-color: transparent;
+  opacity: 0.8;
+}
+
+.oeuvre-single-lien-logo {
+  display: block;
+  height: 40px;
+  width: auto;
+  border-radius: 6px;
+  transition: opacity 0.2s;
+}
+
+/* Cadre d'informations */
+.oeuvre-single-info {
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.oeuvre-single-cover-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f5f5f5;
+  padding: 0.75rem;
+}
+
+.oeuvre-single-cover {
+  max-width: 100%;
+  max-height: 320px;
+  width: auto;
+  height: auto;
+  border-radius: 4px;
+  object-fit: contain;
+  display: block;
+}
+
+.oeuvre-single-meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem 0.75rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.oeuvre-single-meta dt {
+  font-weight: 700;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.oeuvre-single-meta dd {
+  color: var(--color-night);
+}
+
+/* Suites */
+.oeuvre-single-suites {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.oeuvre-single-suites a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Actualités */
+.oeuvre-single-actualites {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.oeuvre-single-actualites-titre {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--color-ocre);
+}
+
+.oeuvre-single-actualites-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.oeuvre-single-actualite {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+}
+
+.oeuvre-single-actualite-date {
+  color: var(--color-moss);
+  font-size: 0.78rem;
+}
+
+.oeuvre-single-actualite a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .oeuvre-single {
+    flex-direction: column-reverse;
+    padding: 2rem 1rem;
+  }
+
+  .oeuvre-single-aside {
+    position: static;
+    width: 100%;
+  }
+
+  .oeuvre-single-cover {
+    max-height: 240px;
+  }
+
+  .oeuvre-single-info {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .oeuvre-single-meta {
+    flex: 1;
+  }
 }
 
 /* -- Responsive -- */
