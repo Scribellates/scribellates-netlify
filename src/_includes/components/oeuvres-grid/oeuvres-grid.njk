@@ -7,13 +7,19 @@
       placeholder="Rechercher une œuvre, un auteur…"
       aria-label="Rechercher une œuvre"
     />
+    <div class="oeuvres-filter-group" role="group" aria-label="Filtrer par statut">
+      <button class="oeuvres-filter-btn oeuvres-filter-btn--active" data-filter="">Tous</button>
+      <button class="oeuvres-filter-btn" data-filter="terminé">Terminé</button>
+      <button class="oeuvres-filter-btn" data-filter="en-cours">En cours</button>
+    </div>
   </div>
   <h1 class="oeuvres-grid-title">Oeuvres</h1>
   <div class="card-grid" id="oeuvres-card-grid">
     {% for oeuvre in collections.oeuvres %}
     <div class="card card-oeuvre card-oeuvre--grid"
          data-titre="{{ oeuvre.data.titre | lower }}"
-         data-auteur="{{ oeuvre.data.auteur | lower }}">
+         data-auteur="{{ oeuvre.data.auteur | lower }}"
+         data-statut="{{ oeuvre.data.statut | replace(' ', '-') | lower }}">
       <img class="card-oeuvre-image card-oeuvre-image--grid" src="{{ oeuvre.data.image }}" alt="Couverture de {{ oeuvre.data.titre }}" />
       <div class="card-oeuvre-body">
         <h3 class="card-oeuvre-titre">{{ oeuvre.data.titre }}</h3>
@@ -32,20 +38,36 @@
     const input = document.getElementById('oeuvres-search');
     const cards = document.querySelectorAll('#oeuvres-card-grid .card-oeuvre--grid');
     const noResults = document.getElementById('oeuvres-no-results');
+    const filterBtns = document.querySelectorAll('.oeuvres-filter-btn');
+    let activeFilter = '';
 
-    input.addEventListener('input', function () {
-      const query = this.value.toLowerCase().trim();
+    function applyFilters() {
+      const query = input.value.toLowerCase().trim();
       let visible = 0;
 
       cards.forEach(function (card) {
-        const match =
+        const matchQuery =
           card.dataset.titre.includes(query) ||
           card.dataset.auteur.includes(query);
-        card.style.display = match ? '' : 'none';
-        if (match) visible++;
+        const matchFilter =
+          activeFilter === '' || card.dataset.statut === activeFilter;
+        const show = matchQuery && matchFilter;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
       });
 
       noResults.hidden = visible > 0;
+    }
+
+    input.addEventListener('input', applyFilters);
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(function (b) { b.classList.remove('oeuvres-filter-btn--active'); });
+        btn.classList.add('oeuvres-filter-btn--active');
+        activeFilter = btn.dataset.filter;
+        applyFilters();
+      });
     });
   })();
 </script>

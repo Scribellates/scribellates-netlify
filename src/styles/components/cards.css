@@ -126,6 +126,10 @@
 
 /* ── Barre de recherche ── */
 .oeuvres-search-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-bottom: 1.5rem;
 }
 
@@ -146,6 +150,34 @@
 .oeuvres-search-input:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(30, 53, 87, 0.12);
+}
+
+/* ── Boutons de filtre ── */
+.oeuvres-filter-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.oeuvres-filter-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  color: var(--color-primary);
+  background-color: var(--color-bg);
+  border: 2px solid #e5e5e5;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.oeuvres-filter-btn:hover {
+  border-color: var(--color-primary);
+}
+
+.oeuvres-filter-btn--active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-bg);
 }
 
 .oeuvres-no-results {
