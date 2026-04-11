@@ -1,0 +1,95 @@
+---
+layout: navbar.njk
+---
+
+<article class="oeuvre-single">
+
+  {# ── Colonne gauche (70%) ── #}
+  <div class="oeuvre-single-main">
+
+    <h1 class="oeuvre-single-titre">{{ titre }}</h1>
+
+    <p class="oeuvre-single-description">{{ description | nl2br | safe }}</p>
+
+    {% if sections %}
+      {% for section in sections %}
+        <section class="oeuvre-single-section">
+          <h2 class="oeuvre-single-section-titre">{{ section.title }}</h2>
+          <div class="oeuvre-single-section-content">{{ section.content | nl2br | safe }}</div>
+        </section>
+      {% endfor %}
+    {% endif %}
+
+    {% if liens %}
+      <div class="oeuvre-single-liens">
+        <h2 class="oeuvre-single-liens-titre">Lire l'œuvre</h2>
+        <ul class="oeuvre-single-liens-list">
+          {% for lien in liens %}
+            <li>
+              <a class="oeuvre-single-lien{% if lien.logo %} oeuvre-single-lien--logo{% endif %}" href="{{ lien.url }}" target="_blank" rel="noopener noreferrer">
+                {% if lien.logo %}
+                  <img class="oeuvre-single-lien-logo" src="{{ lien.logo }}" alt="{{ lien.label }}" />
+                {% else %}
+                  {{ lien.label }}
+                {% endif %}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+  </div>
+
+  {# ── Colonne droite (30%) ── #}
+  <aside class="oeuvre-single-aside">
+
+    <div class="oeuvre-single-info">
+      {% if image %}
+        <div class="oeuvre-single-cover-wrapper">
+          <img class="oeuvre-single-cover" src="{{ image }}" alt="Couverture de {{ titre }}" />
+        </div>
+      {% endif %}
+      <dl class="oeuvre-single-meta">
+        {% if auteur %}
+          <dt>Auteur</dt>
+          <dd>{{ auteur }}</dd>
+        {% endif %}
+        {% if statut %}
+          <dt>Statut</dt>
+          <dd><span class="card-oeuvre-statut card-oeuvre-statut--{{ statut | replace(' ', '-') | lower }}">{{ statut }}</span></dd>
+        {% endif %}
+        {% if suites %}
+          <dt>Suite(s)</dt>
+          <dd>
+            <ul class="oeuvre-single-suites">
+              {% for suite in suites %}
+                <li><a href="{{ suite.url }}">{{ suite.titre }}</a></li>
+              {% endfor %}
+            </ul>
+          </dd>
+        {% endif %}
+        {% if dateAjout %}
+          <dt>Ajouté le</dt>
+          <dd>{{ dateAjout | dateFormat }}</dd>
+        {% endif %}
+      </dl>
+    </div>
+
+    {% if actualites %}
+      <div class="oeuvre-single-actualites">
+        <h2 class="oeuvre-single-actualites-titre">Dernières actualités</h2>
+        <ul class="oeuvre-single-actualites-list">
+          {% for actu in actualites %}
+            <li class="oeuvre-single-actualite">
+              <span class="oeuvre-single-actualite-date">{{ actu.date | dateFormat }}</span>
+              <a href="{{ actu.url }}">{{ actu.titre }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+  </aside>
+
+</article>
