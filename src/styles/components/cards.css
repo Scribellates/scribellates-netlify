@@ -110,6 +110,11 @@ a.card-oeuvre {
   background-color: #1565c0;
 }
 
+.card-oeuvre-statut--réécriture {
+  background-color: #f9a825;
+  color: #1a1a1a;
+}
+
 /* ── Card actualité ── */
 .card-actu {
   display: flex;
