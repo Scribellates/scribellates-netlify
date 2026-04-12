@@ -2,10 +2,6 @@
 node_modules/
 package-lock.json
 
-# Build Eleventy
-public/*
-!public/images/
-
 # Caches Eleventy / outils
 .cache/
 .tmp/

@@ -1,0 +1,75 @@
+/* ── Section presentation ── */
+.presentation {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+
+.presentation-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.presentation-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.presentation-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-night);
+}
+
+.presentation-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  min-height: 100px;
+  overflow: hidden;
+}
+
+.presentation-image img {
+  width: auto;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* -- Responsive -- */
+
+/* Tablette */
+@media (max-width: 1024px) {
+  .presentation-title {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .presentation {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .presentation-title {
+    font-size: 1.75rem;
+  }
+
+  .presentation-text {
+    font-size: 1rem;
+  }
+
+  .presentation-image img {
+    height: auto;
+    width: 60%;
+    max-width: 180px;
+  }
+}
