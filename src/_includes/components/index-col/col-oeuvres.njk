@@ -1,16 +1,16 @@
 <div class="col">
   <h2 class="col-title">{{ colonnes.oeuvres.titre }}</h2>
   <div class="card-list">
-    {% for oeuvre in colonnes.oeuvres.items %}
-    <div class="card card-oeuvre">
-      <img class="card-oeuvre-image" src="{{ oeuvre.image }}" alt="Couverture de {{ oeuvre.titre }}" />
+    {% for oeuvre in collections.oeuvres | sortByDateAjout | limit(3) %}
+    <a href="{{ oeuvre.url }}" class="card card-oeuvre">
+      <img class="card-oeuvre-image" src="{{ oeuvre.data.image }}" alt="Couverture de {{ oeuvre.data.titre }}" />
       <div class="card-oeuvre-body">
-        <h3 class="card-oeuvre-titre">{{ oeuvre.titre }}</h3>
-        <p class="card-oeuvre-auteur">{{ oeuvre.auteur }}</p>
-        <p class="card-oeuvre-extrait">{{ oeuvre.extrait }}</p>
-        <span class="card-oeuvre-statut">{{ oeuvre.statut }}</span>
+        <h3 class="card-oeuvre-titre">{{ oeuvre.data.titre }}</h3>
+        <p class="card-oeuvre-auteur">{{ oeuvre.data.auteur }}</p>
+        <p class="card-oeuvre-extrait">{{ oeuvre.data.description }}</p>
+        <span class="card-oeuvre-statut card-oeuvre-statut--{{ oeuvre.data.statut | replace(' ', '-') | lower }}">{{ oeuvre.data.statut }}</span>
       </div>
-    </div>
+    </a>
     {% endfor %}
   </div>
 </div>
