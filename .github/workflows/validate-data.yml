@@ -7,7 +7,6 @@ on:
       - master
       - develop
       - 'feature/**'
-  pull_request:
 
 jobs:
   validate-data:
