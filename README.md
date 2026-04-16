@@ -21,6 +21,8 @@ npm run build
 npm run validate:data
 ```
 
+Cette commande est aussi exécutée par la CI GitHub Actions sur chaque `push` et `pull_request`.
+
 ## VALIDER UNIQUEMENT LES ŒUVRES
 ```
 npm run validate:oeuvres
