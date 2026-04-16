@@ -23,13 +23,6 @@ npm run validate:data
 
 Cette commande est aussi exécutée par la CI GitHub Actions sur chaque `push` et `pull_request`.
 
-## VALIDER UNIQUEMENT LES ŒUVRES
-```
-npm run validate:oeuvres
-```
-
-Le build exécute automatiquement la validation des données avant Eleventy.
-
 ## LANCER LE SERVEUR DE DÉVELOPPEMENT
 ```
 npm run dev
