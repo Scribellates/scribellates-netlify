@@ -1,0 +1,81 @@
+name: Validate Data
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - develop
+      - 'feature/**'
+      - 'fix/**'
+      - 'hotfix/**'
+  workflow_dispatch:
+
+jobs:
+  discover-datasets:
+    name: Discover datasets
+    runs-on: ubuntu-latest
+    outputs:
+      datasets: ${{ steps.datasets.outputs.datasets }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Export dataset list
+        id: datasets
+        run: node ./scripts/list-validation-datasets.mjs --github-output
+
+  validate-by-dataset:
+    name: Validate dataset - ${{ matrix.dataset }}
+    runs-on: ubuntu-latest
+    needs: discover-datasets
+    strategy:
+      fail-fast: false
+      matrix:
+        dataset: ${{ fromJson(needs.discover-datasets.outputs.datasets) }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate dataset
+        run: node ./scripts/validate-data.mjs ${{ matrix.dataset }}
+
+  validate-all-datasets:
+    name: Validate all datasets
+    runs-on: ubuntu-latest
+    needs:
+      - discover-datasets
+      - validate-by-dataset
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate every dataset
+        run: npm run validate:data
