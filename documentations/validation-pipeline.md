@@ -7,6 +7,7 @@ La validation des donnees est construite autour d'un moteur de schema reutilisab
 ```bash
 npm run validate:data
 npm run validate:oeuvres
+node ./scripts/validate-data.mjs oeuvres
 ```
 
 `npm run build` execute automatiquement `npm run validate:data` avant le build Eleventy.
@@ -16,9 +17,20 @@ npm run validate:oeuvres
 - `scripts/validation/core/schema.mjs` : primitives de schema (`stringField`, `objectField`, `arrayField`, `optional`, `enumField`) et moteur de validation recursif.
 - `scripts/validation/core/rules.mjs` : regles reutilisables de format (`isoDateRule`, `httpUrlRule`, `pathPrefixRule`, `fileExistsFromWebPathRule`).
 - `scripts/validation/core/datasets.mjs` : collecte des fichiers, parsing du front matter, normalisation YAML, execution et rendu console.
+- `scripts/validation/datasets/manifest.mjs` : registre des types de donnees et chargement paresseux des schemas.
 - `scripts/validation/datasets/*.mjs` : definition des schemas metier par type de donnees.
 - `scripts/validate-data.mjs` : point d'entree generique pour valider tous les datasets ou une selection.
 - `scripts/validate-oeuvres.mjs` : point d'entree cible pour les oeuvres.
+- `scripts/list-validation-datasets.mjs` : expose la liste des datasets pour la CI GitHub Actions.
+
+## CI GitHub
+
+Le workflow GitHub Actions est defini dans `.github/workflows/validate-data.yml`.
+
+Il est organise en deux etapes :
+
+1. Une etape de decouverte puis de validation par type de donnees, avec un job distinct par dataset.
+2. Une etape finale automatique qui execute la validation globale sur tous les datasets apres succes des jobs specifiques.
 
 Pour les oeuvres, la validation couvre maintenant aussi l'existence physique des fichiers images references par `image` et `liens[].logo` dans `src/`.
 
