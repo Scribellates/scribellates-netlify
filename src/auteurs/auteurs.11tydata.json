@@ -1,0 +1,5 @@
+{
+  "tags": "auteurs",
+  "layout": "auteur-single.njk",
+  "permalink": "/auteurs/{{ nom | slug }}/"
+}

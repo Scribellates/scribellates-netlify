@@ -1,6 +1,8 @@
 ---
 titre: Onigard - Origines
-auteur: Sian
+auteur:
+  nom: Sian
+  url: /auteurs/sian/
 description: |
     Suite à d'horribles évènements, Heceol et ses amis essayeront de prendre une revanche sur leur passé et tenteront de « purifier l'espèce humaine ».
 statut: Terminé

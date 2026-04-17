@@ -1,6 +1,8 @@
 ---
 titre: Onigard - Apparition
-auteur: Sian
+auteur:
+  nom: Sian
+  url: /auteurs/sian/
 description: |
     'Le monde moderne m'est si lointain...'
 

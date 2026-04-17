@@ -1,6 +1,8 @@
 ---
 titre: Onigard - La Pyramide de Dieu
-auteur: Sian
+auteur:
+  nom: Sian
+  url: /auteurs/sian/
 description: |
     'Comment aurais-tu réagirais si tu apprenais que ta mère t'avait menti depuis le début ?'
 

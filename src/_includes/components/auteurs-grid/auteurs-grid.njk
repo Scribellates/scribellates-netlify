@@ -1,0 +1,15 @@
+<section class="auteurs-grid-section">
+  <h1 class="auteurs-grid-title">Auteurs</h1>
+  <div class="auteurs-card-grid">
+    {% for auteur in collections.auteurs %}
+    <a href="{{ auteur.url }}" class="card card-auteur">
+      <img
+        class="card-auteur-image"
+        src="{{ auteur.data.image }}"
+        alt="Portrait de {{ auteur.data.nom }}"
+      />
+      <h2 class="card-auteur-nom">{{ auteur.data.nom }}</h2>
+    </a>
+    {% endfor %}
+  </div>
+</section>

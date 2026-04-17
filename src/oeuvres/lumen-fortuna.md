@@ -1,6 +1,8 @@
 ---
 titre: Lumen Fortuna - Destin Incertain
-auteur: Zorawuco
+auteur:
+  nom: Zorawuco
+  url: /auteurs/zorawuco/
 description: |
     Jusqu'où êtes-vous prêts à aller pour réaliser ce qu'il y a de plus cher à vos yeux ?
 
