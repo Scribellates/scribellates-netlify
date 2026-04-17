@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx @11ty/eleventy --input=src --output=public",
+    "validate:data": "node ./scripts/validate-data.mjs",
+    "validate:oeuvres": "node ./scripts/validate-oeuvres.mjs",
+    "build": "npm run validate:data && npx @11ty/eleventy --input=src --output=public",
     "dev": "npx @11ty/eleventy --serve --input=src --output=public"
   },
   "keywords": [],
@@ -12,7 +14,8 @@
   "type": "module",
   "description": "",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.5"
+    "@11ty/eleventy": "^3.1.5",
+    "gray-matter": "^4.0.3"
   },
   "json.schemas": []
 }

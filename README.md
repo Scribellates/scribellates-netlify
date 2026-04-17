@@ -16,6 +16,13 @@ npm install
 npm run build
 ```
 
+## VALIDER LES DONNÉES
+```
+npm run validate:data
+```
+
+Cette commande est aussi exécutée par la CI GitHub Actions sur chaque `push` et `pull_request`.
+
 ## LANCER LE SERVEUR DE DÉVELOPPEMENT
 ```
 npm run dev
@@ -28,6 +35,7 @@ npm run dev
 - `src/` : Contient les fichiers sources du projet, y compris les pages, les styles et les composants.
 - `public/` : Contient les fichiers statiques qui seront copiés tels quels dans le dossier de distribution.
 - `documentations/` : Contient les fichiers de directions de conception.
+- `scripts/validation/` : Contient le moteur de validation réutilisable pour les jeux de données Markdown/front matter.
 
 # Wireframes
 
