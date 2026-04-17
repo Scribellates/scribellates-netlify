@@ -44,9 +44,14 @@ const suiteSchema = objectField({
   url: stringField({ validators: [pathPrefixRule('/oeuvres/')] }),
 });
 
+const auteurSchema = objectField({
+  nom: stringField(),
+  url: stringField({ validators: [pathPrefixRule('/auteurs/')] }),
+});
+
 const oeuvreSchema = objectField({
   titre: stringField(),
-  auteur: stringField(),
+  auteur: auteurSchema,
   description: stringField(),
   statut: enumField(STATUTS_OEUVRES, { caseInsensitive: true }),
   image: stringField({ validators: [pathPrefixRule('/images/covers/'), assetExistsRule] }),

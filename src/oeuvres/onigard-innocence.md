@@ -1,6 +1,8 @@
 ---
 titre: Onigard - Innocence
-auteur: Sian
+auteur:
+  nom: Sian
+  url: /auteurs/sian/
 description: |
     Dans un village excentré du royaume de Delengua vit Hitch, un enfant qui va voir sa vie bouleversée lorsque d'étranges choses vont se passer dans la forêt de son village.
 statut: Terminé

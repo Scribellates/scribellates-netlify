@@ -1,6 +1,8 @@
 ---
 titre: Onigard - Prequelle
-auteur: Sian
+auteur:
+  nom: Sian
+  url: /auteurs/sian/
 description: |
     'Dis-moi, tu ne te souviens vraiment pas de ton ancienne vie ?'
 

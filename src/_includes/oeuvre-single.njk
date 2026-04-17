@@ -2,6 +2,9 @@
 layout: navbar.njk
 ---
 
+{% set auteurNom = auteur.nom or auteur %}
+{% set auteurUrl = auteur.url %}
+
 <article class="oeuvre-single">
 
   {# ── Colonne gauche (70%) ── #}
@@ -51,9 +54,15 @@ layout: navbar.njk
         </div>
       {% endif %}
       <dl class="oeuvre-single-meta">
-        {% if auteur %}
+        {% if auteurNom %}
           <dt>Auteur</dt>
-          <dd>{{ auteur }}</dd>
+          <dd>
+            {% if auteurUrl %}
+              <a href="{{ auteurUrl }}">{{ auteurNom }}</a>
+            {% else %}
+              {{ auteurNom }}
+            {% endif %}
+          </dd>
         {% endif %}
         {% if statut %}
           <dt>Statut</dt>
@@ -76,7 +85,6 @@ layout: navbar.njk
       </dl>
     </div>
 
-    {% if actualites %}
       <div class="oeuvre-single-actualites">
         <h2 class="oeuvre-single-actualites-titre">Dernières actualités</h2>
         <ul class="oeuvre-single-actualites-list">
@@ -88,7 +96,6 @@ layout: navbar.njk
           {% endfor %}
         </ul>
       </div>
-    {% endif %}
 
   </aside>
 
