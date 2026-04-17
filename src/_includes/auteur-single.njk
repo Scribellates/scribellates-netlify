@@ -1,0 +1,80 @@
+---
+layout: navbar.njk
+---
+
+<article class="auteur-single">
+  <div class="auteur-single-main">
+    <h1 class="auteur-single-title">{{ nom }}</h1>
+
+    <section class="auteur-single-intro">
+      {% if image %}
+      <div class="auteur-single-image-wrapper">
+        <img class="auteur-single-image" src="{{ image }}" alt="Portrait de {{ nom }}" />
+      </div>
+      {% endif %}
+
+      {% if biographie %}
+      <div class="auteur-single-description">{{ biographie | nl2br | safe }}</div>
+      {% endif %}
+    </section>
+
+    {% if sections %}
+      {% for section in sections %}
+      <section class="auteur-single-section">
+        <h2 class="auteur-single-section-title">{{ section.title }}</h2>
+        <div class="auteur-single-section-content">{{ section.content | nl2br | safe }}</div>
+      </section>
+      {% endfor %}
+    {% endif %}
+
+    {% if oeuvres %}
+    <section class="auteur-single-oeuvres">
+      <h2 class="auteur-single-section-title">Oeuvres</h2>
+      <div class="auteur-single-oeuvres-list">
+        {% for oeuvre in oeuvres %}
+          {% set oeuvreImage = "" %}
+          {% set oeuvreDescription = "" %}
+          {% set oeuvreStatut = "" %}
+          {% for oeuvreDoc in collections.oeuvres %}
+            {% if oeuvreDoc.url == oeuvre.url %}
+              {% set oeuvreImage = oeuvreDoc.data.image %}
+              {% set oeuvreDescription = oeuvreDoc.data.description %}
+              {% set oeuvreStatut = oeuvreDoc.data.statut %}
+            {% endif %}
+          {% endfor %}
+        <a href="{{ oeuvre.url }}" class="card card-oeuvre auteur-single-oeuvre-card">
+          {% if oeuvreImage %}
+          <img class="card-oeuvre-image auteur-single-oeuvre-image" src="{{ oeuvreImage }}" alt="Couverture de {{ oeuvre.titre }}" />
+          {% endif %}
+          <div class="card-oeuvre-body auteur-single-oeuvre-body">
+            <h3 class="card-oeuvre-titre">{{ oeuvre.titre }}</h3>
+            {% if oeuvreDescription %}
+            <p class="card-oeuvre-extrait auteur-single-oeuvre-extrait">{{ oeuvreDescription }}</p>
+            {% endif %}
+            {% if oeuvreStatut %}
+            <span class="card-oeuvre-statut card-oeuvre-statut--{{ oeuvreStatut | replace(' ', '-') | lower }}">{{ oeuvreStatut }}</span>
+            {% endif %}
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  </div>
+
+  <aside class="auteur-single-aside">
+    <section class="auteur-single-actualites">
+      <h2 class="auteur-single-info-title">Dernières actualités</h2>
+      <ul class="auteur-single-actualites-list">
+        {% for actu in actualites %}
+        <li class="auteur-single-actualite">
+          {% if actu.date %}
+          <span class="auteur-single-actualite-date">{{ actu.date | dateFormat }}</span>
+          {% endif %}
+          <a href="{{ actu.url }}">{{ actu.titre }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </aside>
+</article>
