@@ -4,6 +4,11 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit));
 
+  eleventyConfig.addFilter("findOeuvreByUrl", (arr, url) => {
+    if (!Array.isArray(arr) || !url) return null;
+    return arr.find((entry) => entry.url === url) ?? null;
+  });
+
   eleventyConfig.addFilter("sortByDateAjout", (arr) =>
     [...arr].sort((a, b) => {
       const dateA = new Date(a.data.dateAjout ?? 0);

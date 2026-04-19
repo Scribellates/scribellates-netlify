@@ -1,0 +1,169 @@
+{% set planningConfig = collections.planningData[0].data.planning %}
+
+<section class="planning-page" data-planning-root data-default-site="{{ planningConfig.defaultSiteId }}">
+  <header class="planning-header">
+    <h1 class="planning-title">Planning des sorties</h1>
+
+    <div class="planning-site-picker" data-site-picker>
+      <button
+        type="button"
+        class="planning-site-trigger"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-label="Choisir une plateforme"
+        data-site-trigger
+      >
+        {% for site in planningConfig.sites %}
+          {% if site.id == planningConfig.defaultSiteId %}
+          <span class="planning-site-trigger-content" data-site-trigger-content>
+            <img src="{{ site.logo }}" alt="" class="planning-site-logo" />
+            <span>{{ site.name }}</span>
+          </span>
+          {% endif %}
+        {% endfor %}
+        <span class="planning-site-trigger-caret" aria-hidden="true">▾</span>
+      </button>
+
+      <div class="planning-site-menu" data-site-menu hidden>
+        {% for site in planningConfig.sites %}
+        <button
+          type="button"
+          class="planning-site-option{% if site.id == planningConfig.defaultSiteId %} planning-site-option--active{% endif %}"
+          data-site-option="{{ site.id }}"
+          data-site-name="{{ site.name }}"
+          data-site-logo="{{ site.logo }}"
+        >
+          <img src="{{ site.logo }}" alt="" class="planning-site-logo" />
+          <span>{{ site.name }}</span>
+        </button>
+        {% endfor %}
+      </div>
+    </div>
+  </header>
+
+  <div class="planning-panels">
+    {% for site in planningConfig.sites %}
+    <section class="planning-site-panel{% if site.id == planningConfig.defaultSiteId %} planning-site-panel--active{% endif %}" data-site-panel="{{ site.id }}" {% if site.id != planningConfig.defaultSiteId %}hidden{% endif %}>
+      {% for day in planningConfig.days %}
+      {% set dayEntries = site.schedule[day.id] %}
+      <section class="planning-day" data-day-index="{{ loop.index0 }}" data-day-id="{{ day.id }}">
+        <div class="planning-day-header">
+          <h2 class="planning-day-title">{{ day.label or day.name or day.id }}</h2>
+          <span class="planning-day-count">{{ dayEntries | length }} sortie{% if (dayEntries | length) > 1 %}s{% endif %}</span>
+        </div>
+
+        {% if dayEntries | length %}
+        <div class="planning-day-cards">
+          {% for entry in dayEntries %}
+          {% set oeuvre = collections.oeuvres | findOeuvreByUrl(entry.oeuvreUrl) %}
+          {% if oeuvre %}
+          {% set auteurNom = oeuvre.data.auteur.nom or oeuvre.data.auteur %}
+          <a href="{{ oeuvre.url }}" class="card card-oeuvre planning-card">
+            <img class="card-oeuvre-image planning-card-image" src="{{ oeuvre.data.image }}" alt="Couverture de {{ oeuvre.data.titre }}" />
+            <div class="card-oeuvre-body planning-card-body">
+              <h3 class="card-oeuvre-titre">{{ oeuvre.data.titre }}</h3>
+              <p class="card-oeuvre-auteur">{{ auteurNom }}</p>
+              <p class="card-oeuvre-extrait">{{ oeuvre.data.description }}</p>
+              <span class="card-oeuvre-statut card-oeuvre-statut--{{ oeuvre.data.statut | replace(' ', '-') | lower }}">{{ oeuvre.data.statut }}</span>
+            </div>
+          </a>
+          {% endif %}
+          {% endfor %}
+        </div>
+        {% else %}
+        <p class="planning-day-empty">Aucune sortie prévue.</p>
+        {% endif %}
+      </section>
+      {% endfor %}
+    </section>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+  (function () {
+    const root = document.querySelector('[data-planning-root]');
+
+    if (!root) {
+      return;
+    }
+
+    const trigger = root.querySelector('[data-site-trigger]');
+    const triggerContent = root.querySelector('[data-site-trigger-content]');
+    const menu = root.querySelector('[data-site-menu]');
+    const options = root.querySelectorAll('[data-site-option]');
+    const panels = root.querySelectorAll('[data-site-panel]');
+    const defaultSite = root.dataset.defaultSite;
+    const orderedDayIds = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'];
+
+    function reorderDays(panel) {
+      const today = new Date();
+      const startIndex = (today.getDay() + 6) % 7;
+      const dayMap = new Map();
+
+      panel.querySelectorAll('[data-day-id]').forEach(function (daySection) {
+        dayMap.set(daySection.dataset.dayId, daySection);
+      });
+
+      orderedDayIds.slice(startIndex).concat(orderedDayIds.slice(0, startIndex)).forEach(function (dayId) {
+        const section = dayMap.get(dayId);
+        if (section) {
+          panel.appendChild(section);
+        }
+      });
+    }
+
+    function updateTrigger(option) {
+      triggerContent.innerHTML = '<img src="' + option.dataset.siteLogo + '" alt="" class="planning-site-logo" /><span>' + option.dataset.siteName + '</span>';
+    }
+
+    function setActiveSite(siteId) {
+      options.forEach(function (option) {
+        option.classList.toggle('planning-site-option--active', option.dataset.siteOption === siteId);
+      });
+
+      panels.forEach(function (panel) {
+        const isActive = panel.dataset.sitePanel === siteId;
+        panel.hidden = !isActive;
+        panel.classList.toggle('planning-site-panel--active', isActive);
+
+        if (isActive) {
+          reorderDays(panel);
+        }
+      });
+    }
+
+    function closeMenu() {
+      menu.hidden = true;
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleMenu() {
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      menu.hidden = isOpen;
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+    }
+
+    trigger.addEventListener('click', toggleMenu);
+
+    options.forEach(function (option) {
+      option.addEventListener('click', function () {
+        updateTrigger(option);
+        setActiveSite(option.dataset.siteOption);
+        closeMenu();
+      });
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!root.contains(event.target)) {
+        closeMenu();
+      }
+    });
+
+    const defaultOption = root.querySelector('[data-site-option="' + defaultSite + '"]');
+    if (defaultOption) {
+      updateTrigger(defaultOption);
+      setActiveSite(defaultSite);
+    }
+  })();
+</script>
