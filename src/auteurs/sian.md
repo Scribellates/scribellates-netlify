@@ -9,7 +9,7 @@ reseaux:
   - label: Wattpad
     url: https://www.wattpad.com/user/Sian1__
     logo: /images/social/wattpad.png
-  - label: Twitter/X
+  - label: Twitter/X 
     url: https://x.com/Sian1__
     logo: /images/social/x.png
 oeuvres:
