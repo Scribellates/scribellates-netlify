@@ -36,5 +36,17 @@ oeuvres:
 
 ## Division droite de la page (30% de la largeur)
 
+### Réseaux sociaux de l'auteur
+Il doit être possible d'afficher les réseaux sociaux et plateformes de l'auteur dans la colonne de droite, au-dessus des dernières actualités.
+```markdown
+reseaux:
+  - label: Wattpad
+    url: https://www.wattpad.com/story/123456789-mon-oeuvre
+    logo: /images/sites/wattpad.png
+  - label: Instagram
+    url: https://www.instagram.com/moncompte/
+    logo: /images/social-media/Instagram.png
+```
+
 ### Dernière actualités de l'auteur
 Il doit être possible d'afficher les dernières actualités de l'auteur, qui seront affichées sous le cadre d'informations. Les actualités doivent être affichées sous forme de liste, avec la date de l'actualité et un lien vers l'article correspondant.

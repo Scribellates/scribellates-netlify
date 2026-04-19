@@ -5,6 +5,13 @@ biographie: |
 
     J'essaye aussi de monter une petite structure du nom de Scribellates pour aider les auteurs amateurs publiant en ligne à se développer et s'améliorer.
 image: /images/auteurs/sian.jpg
+reseaux:
+  - label: Wattpad
+    url: https://www.wattpad.com/user/Sian1__
+    logo: /images/social/wattpad.png
+  - label: Twitter/X
+    url: https://x.com/Sian1__
+    logo: /images/social/x.png
 oeuvres:
   - titre: Onigard - Prequelle
     url: /oeuvres/onigard-prequelle/

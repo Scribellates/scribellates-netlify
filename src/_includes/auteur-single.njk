@@ -63,6 +63,24 @@ layout: navbar.njk
   </div>
 
   <aside class="auteur-single-aside">
+    {% if reseaux and reseaux.length %}
+    <section class="auteur-single-reseaux">
+      <h2 class="auteur-single-info-title">Réseaux sociaux</h2>
+      <ul class="auteur-single-reseaux-list">
+        {% for reseau in reseaux %}
+        <li>
+          <a class="auteur-single-reseau-link" href="{{ reseau.url }}" target="_blank" rel="noopener noreferrer">
+            {% if reseau.logo %}
+            <img class="auteur-single-reseau-logo" src="{{ reseau.logo }}" alt="" aria-hidden="true" />
+            {% endif %}
+            <span>{{ reseau.label }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
     <section class="auteur-single-actualites">
       <h2 class="auteur-single-info-title">Dernières actualités</h2>
       <ul class="auteur-single-actualites-list">
