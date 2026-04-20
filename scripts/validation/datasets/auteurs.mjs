@@ -10,6 +10,7 @@ import {
 } from '../core/schema.mjs';
 import {
   fileExistsFromWebPathRule,
+  httpUrlRule,
   isoDateRule,
   pathPrefixRule,
 } from '../core/rules.mjs';
@@ -35,12 +36,19 @@ const actualiteSchema = objectField({
   date: stringField({ validators: [isoDateRule] }),
 });
 
+const reseauSchema = objectField({
+  label: stringField(),
+  url: stringField({ validators: [httpUrlRule] }),
+  logo: optional(stringField({ validators: [pathPrefixRule('/images/'), assetExistsRule] })),
+});
+
 const auteurSchema = objectField({
   nom: stringField(),
   biographie: stringField(),
   image: stringField({ validators: [pathPrefixRule('/images/auteurs/'), assetExistsRule] }),
   oeuvres: arrayField(oeuvreSchema, { minLength: 1 }),
   sections: optional(arrayField(sectionSchema)),
+  reseaux: optional(arrayField(reseauSchema, { minLength: 1 })),
   actualites: optional(arrayField(actualiteSchema)),
 });
 

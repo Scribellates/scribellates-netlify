@@ -380,6 +380,7 @@ a.card-auteur {
 .auteur-single-section,
 .auteur-single-oeuvres,
 .auteur-single-info,
+.auteur-single-reseaux,
 .auteur-single-actualites {
   display: flex;
   flex-direction: column;
@@ -448,6 +449,42 @@ a.auteur-single-oeuvre-card {
 
 .auteur-single-meta dd {
   color: var(--color-night);
+}
+
+.auteur-single-reseaux-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.auteur-single-reseau-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.auteur-single-reseau-link:hover,
+.auteur-single-reseau-link:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--color-ocre);
+  box-shadow: 0 10px 24px rgba(30, 53, 87, 0.08);
+}
+
+.auteur-single-reseau-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .auteur-single-actualites-list {

@@ -7,6 +7,10 @@ biographie: |
 
     Je vous souhaite de trouver autant de plaisir à vivre ses histoires que j'en ai eu à les écrire.
 image: /images/auteurs/zorawuco.jpg
+reseaux:
+  - label: Wattpad
+    url: https://www.wattpad.com/user/Zorawuco
+    logo: /images/social/wattpad.png
 oeuvres:
   - titre: Lumen Fortuna - Destin Incertain
     url: /oeuvres/lumen-fortuna-destin-incertain/
