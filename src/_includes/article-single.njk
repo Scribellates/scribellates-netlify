@@ -1,0 +1,46 @@
+---
+layout: navbar.njk
+---
+
+<article class="article-single">
+  <header class="article-single-header">
+    <h1 class="article-single-title">{{ titre }}</h1>
+    <p class="article-single-meta">Publié le {{ datePublication | dateFormat }} · {{ redacteur }}</p>
+  </header>
+
+  <div class="article-single-content">
+    {{ content | safe }}
+  </div>
+
+  {% if auteurs and auteurs.length %}
+    <section class="article-single-links">
+      <h2 class="article-single-links-title">Auteurs liés</h2>
+      <ul class="article-single-links-list">
+        {% for auteurUrl in auteurs %}
+          {% set auteur = collections.auteurs | findByUrl(auteurUrl) %}
+          {% if auteur %}
+            <li><a href="{{ auteur.url }}">{{ auteur.data.nom }}</a></li>
+          {% else %}
+            <li><a href="{{ auteurUrl }}">{{ auteurUrl }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+
+  {% if oeuvres and oeuvres.length %}
+    <section class="article-single-links">
+      <h2 class="article-single-links-title">Oeuvres liées</h2>
+      <ul class="article-single-links-list">
+        {% for oeuvreUrl in oeuvres %}
+          {% set oeuvre = collections.oeuvres | findByUrl(oeuvreUrl) %}
+          {% if oeuvre %}
+            <li><a href="{{ oeuvre.url }}">{{ oeuvre.data.titre }}</a></li>
+          {% else %}
+            <li><a href="{{ oeuvreUrl }}">{{ oeuvreUrl }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+</article>

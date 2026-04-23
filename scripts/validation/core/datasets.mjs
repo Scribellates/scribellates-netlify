@@ -79,6 +79,20 @@ export function createMarkdownFrontMatterDataset(config) {
 
         const normalizedData = normalizeFrontMatterValue(parsed.data);
         const errors = validateSchema(config.schema, normalizedData);
+
+        if (typeof config.validateEntry === 'function') {
+          const customErrors = config.validateEntry({
+            filePath,
+            data: normalizedData,
+            content: parsed.content,
+            parsed,
+          });
+
+          if (Array.isArray(customErrors) && customErrors.length > 0) {
+            errors.push(...customErrors);
+          }
+        }
+
         if (errors.length > 0) {
           results.push({ filePath, errors });
         }

@@ -124,6 +124,10 @@ a.card-oeuvre {
   padding: 1rem 1.25rem;
 }
 
+.two-cols .card-actu {
+  min-height: 190px;
+}
+
 .card-actu-titre {
   font-size: 1rem;
   font-weight: 700;
@@ -510,6 +514,144 @@ a.auteur-single-oeuvre-card {
   text-decoration: underline;
 }
 
+/* ── Page actualites : grille ── */
+.articles-grid-section {
+  padding: 3rem 2rem;
+}
+
+.articles-grid-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-ocre);
+}
+
+.articles-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.card-article,
+a.card-article {
+  aspect-ratio: 1 / 1;
+}
+
+.card-article-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.card-article-title {
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--color-primary);
+}
+
+.card-article-excerpt {
+  flex: 1;
+  color: var(--color-night);
+  font-size: 0.93rem;
+  line-height: 1.55;
+  display: -webkit-box;
+  line-clamp: 5;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-article-meta {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 0.55rem;
+  font-size: 0.8rem;
+  color: var(--color-moss);
+}
+
+/* ── Page article individuelle ── */
+.article-single {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.article-single-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.article-single-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.18;
+  color: var(--color-primary);
+}
+
+.article-single-meta {
+  color: var(--color-moss);
+  font-size: 0.92rem;
+}
+
+.article-single-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--color-night);
+}
+
+.article-single-content h2,
+.article-single-content h3 {
+  color: var(--color-primary);
+  margin-top: 0.7rem;
+}
+
+.article-single-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.article-single-links-title {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--color-ocre);
+}
+
+.article-single-links-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.article-single-links-list a {
+  display: inline-flex;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid #e5e5e5;
+  color: var(--color-primary);
+  text-decoration: none;
+  background-color: #f7f7f7;
+}
+
+.article-single-links-list a:hover {
+  border-color: var(--color-ocre);
+}
+
 @media (max-width: 640px) {
   .auteurs-grid-section {
     padding: 2rem 0;
@@ -518,6 +660,18 @@ a.auteur-single-oeuvre-card {
   .auteurs-card-grid {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 1rem;
+  }
+
+  .articles-grid-section {
+    padding: 2rem 0;
+  }
+
+  .articles-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-single {
+    padding: 2rem 0;
   }
 
   .card-auteur {

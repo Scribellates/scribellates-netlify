@@ -84,14 +84,21 @@ layout: navbar.njk
     <section class="auteur-single-actualites">
       <h2 class="auteur-single-info-title">Dernières actualités</h2>
       <ul class="auteur-single-actualites-list">
-        {% for actu in actualites %}
-        <li class="auteur-single-actualite">
-          {% if actu.date %}
-          <span class="auteur-single-actualite-date">{{ actu.date | dateFormat }}</span>
+        {% set actuCount = 0 %}
+        {% for article in collections.articles | sortByDatePublication %}
+          {% if article.data.auteurs and (page.url in article.data.auteurs) and actuCount < 3 %}
+            {% set actuCount = actuCount + 1 %}
+            <li class="auteur-single-actualite">
+              {% if article.data.datePublication %}
+              <span class="auteur-single-actualite-date">{{ article.data.datePublication | dateFormat }}</span>
+              {% endif %}
+              <a href="{{ article.url }}">{{ article.data.titre }}</a>
+            </li>
           {% endif %}
-          <a href="{{ actu.url }}">{{ actu.titre }}</a>
-        </li>
         {% endfor %}
+        {% if actuCount == 0 %}
+          <li class="auteur-single-actualite">Aucune actualité liée pour le moment.</li>
+        {% endif %}
       </ul>
     </section>
   </aside>

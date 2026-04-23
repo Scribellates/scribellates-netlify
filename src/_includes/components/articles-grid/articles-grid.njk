@@ -1,0 +1,18 @@
+<section class="articles-grid-section">
+  <h1 class="articles-grid-title">Actualites</h1>
+
+  <div class="articles-card-grid">
+    {% for article in collections.articles | sortByDatePublication %}
+      <a href="{{ article.url }}" class="card card-article">
+        <div class="card-article-body">
+          <h2 class="card-article-title">{{ article.data.titre }}</h2>
+          <p class="card-article-excerpt">{{ article.templateContent | excerptFromMarkdown(165) }}</p>
+          <p class="card-article-meta">
+            <span>{{ article.data.datePublication | dateFormat }}</span>
+            <span>{{ article.data.redacteur }}</span>
+          </p>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
