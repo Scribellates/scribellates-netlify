@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "validate:data": "node ./scripts/validate-data.mjs",
+    "validate:articles": "node ./scripts/validate-articles.mjs",
     "validate:oeuvres": "node ./scripts/validate-oeuvres.mjs",
     "build": "npm run validate:data && npx @11ty/eleventy --input=src --output=public",
     "dev": "npx @11ty/eleventy --serve --input=src --output=public"

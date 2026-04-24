@@ -1,10 +1,15 @@
 <div class="col">
   <h2 class="col-title">{{ colonnes.actualites.titre }}</h2>
   <div class="card-list">
-    {% for actu in colonnes.actualites.items %}
+    {% for article in collections.articles | sortByDatePublication | limit(3) %}
+    <a href="{{ article.url }}" class="card card-actu">
+      <h3 class="card-actu-titre">{{ article.data.titre }}</h3>
+      <p class="card-actu-extrait">{{ article.templateContent | excerptFromMarkdown(210) }}</p>
+    </a>
+    {% else %}
     <div class="card card-actu">
-      <h3 class="card-actu-titre">{{ actu.titre }}</h3>
-      <p class="card-actu-extrait">{{ actu.extrait }}</p>
+      <h3 class="card-actu-titre">Aucune actualite</h3>
+      <p class="card-actu-extrait">Ajoutez un article dans src/articles pour l'afficher ici.</p>
     </div>
     {% endfor %}
   </div>
