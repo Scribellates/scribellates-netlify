@@ -4,7 +4,11 @@
     {% for article in collections.articles | sortByDatePublication | limit(3) %}
     <a href="{{ article.url }}" class="card card-actu">
       <h3 class="card-actu-titre">{{ article.data.titre }}</h3>
-      <p class="card-actu-extrait">{{ article.templateContent | excerptFromMarkdown(210) }}</p>
+      <p class="card-actu-extrait">{{ article.templateContent | excerptFromMarkdown(500) }}</p>
+      <p class="card-actu-meta">
+        <span class="card-actu-date">{{ article.data.datePublication | dateFormat }}</span>
+        <span class="card-actu-redacteur">{{ article.data.redacteur }}</span>
+      </p>
     </a>
     {% else %}
     <div class="card card-actu">

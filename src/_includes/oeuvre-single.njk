@@ -68,6 +68,16 @@ layout: navbar.njk
           <dt>Statut</dt>
           <dd><span class="card-oeuvre-statut card-oeuvre-statut--{{ statut | replace(' ', '-') | lower }}">{{ statut }}</span></dd>
         {% endif %}
+        {% if tags %}
+          <dt>Tags</dt>
+          <dd>
+            <ul class="oeuvre-single-tags">
+              {% for tag in tags %}
+                <li><span class="oeuvre-single-tag">{{ tag }}</span></li>
+              {% endfor %}
+            </ul>
+          </dd>
+        {% endif %}
         {% if suites %}
           <dt>Suite(s)</dt>
           <dd>

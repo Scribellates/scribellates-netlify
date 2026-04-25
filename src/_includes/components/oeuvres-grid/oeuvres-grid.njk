@@ -17,7 +17,7 @@
   </div>
   <h1 class="oeuvres-grid-title">Oeuvres</h1>
   <div class="card-grid" id="oeuvres-card-grid">
-    {% for oeuvre in collections.oeuvres %}
+    {% for oeuvre in oeuvresPage %}
     {% set auteurNom = oeuvre.data.auteur.nom or oeuvre.data.auteur %}
     <a href="{{ oeuvre.url }}" class="card card-oeuvre card-oeuvre--grid"
          data-titre="{{ oeuvre.data.titre | lower }}"
@@ -34,6 +34,26 @@
     {% endfor %}
   </div>
   <p class="oeuvres-no-results" id="oeuvres-no-results" hidden>Aucun résultat.</p>
+
+  {% if pagination and pagination.pages and pagination.pages.length > 1 %}
+  <nav class="listing-pagination" aria-label="Pagination des oeuvres">
+    <div class="listing-pagination-links">
+      {% if pagination.href.previous %}
+      <a class="listing-pagination-link" href="{{ pagination.href.previous }}">Precedent</a>
+      {% else %}
+      <span class="listing-pagination-link listing-pagination-link--disabled" aria-disabled="true">Precedent</span>
+      {% endif %}
+
+      <span class="listing-pagination-status">Page {{ pagination.pageNumber + 1 }} sur {{ pagination.pages.length }}</span>
+
+      {% if pagination.href.next %}
+      <a class="listing-pagination-link" href="{{ pagination.href.next }}">Suivant</a>
+      {% else %}
+      <span class="listing-pagination-link listing-pagination-link--disabled" aria-disabled="true">Suivant</span>
+      {% endif %}
+    </div>
+  </nav>
+  {% endif %}
 </section>
 
 <script>

@@ -1,7 +1,7 @@
 <section class="auteurs-grid-section">
   <h1 class="auteurs-grid-title">Auteurs</h1>
   <div class="auteurs-card-grid">
-    {% for auteur in collections.auteurs %}
+    {% for auteur in auteursPage %}
     <a href="{{ auteur.url }}" class="card card-auteur">
       <img
         class="card-auteur-image"
@@ -12,4 +12,24 @@
     </a>
     {% endfor %}
   </div>
+
+  {% if pagination and pagination.pages and pagination.pages.length > 1 %}
+  <nav class="listing-pagination" aria-label="Pagination des auteurs">
+    <div class="listing-pagination-links">
+      {% if pagination.href.previous %}
+      <a class="listing-pagination-link" href="{{ pagination.href.previous }}">Precedent</a>
+      {% else %}
+      <span class="listing-pagination-link listing-pagination-link--disabled" aria-disabled="true">Precedent</span>
+      {% endif %}
+
+      <span class="listing-pagination-status">Page {{ pagination.pageNumber + 1 }} sur {{ pagination.pages.length }}</span>
+
+      {% if pagination.href.next %}
+      <a class="listing-pagination-link" href="{{ pagination.href.next }}">Suivant</a>
+      {% else %}
+      <span class="listing-pagination-link listing-pagination-link--disabled" aria-disabled="true">Suivant</span>
+      {% endif %}
+    </div>
+  </nav>
+  {% endif %}
 </section>

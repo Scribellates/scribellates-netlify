@@ -2,7 +2,7 @@
   <h1 class="articles-grid-title">Actualites</h1>
 
   <div class="articles-card-grid">
-    {% for article in collections.articles | sortByDatePublication %}
+    {% for article in articlesPage %}
       <a href="{{ article.url }}" class="card card-article">
         <div class="card-article-body">
           <h2 class="card-article-title">{{ article.data.titre }}</h2>
@@ -15,4 +15,24 @@
       </a>
     {% endfor %}
   </div>
+
+  {% if pagination and pagination.pages and pagination.pages.length > 1 %}
+  <nav class="listing-pagination" aria-label="Pagination des actualites">
+    <div class="listing-pagination-links">
+      {% if pagination.href.previous %}
+      <a class="listing-pagination-link" href="{{ pagination.href.previous }}">Precedent</a>
+      {% else %}
+      <span class="listing-pagination-link listing-pagination-link--disabled" aria-disabled="true">Precedent</span>
+      {% endif %}
+
+      <span class="listing-pagination-status">Page {{ pagination.pageNumber + 1 }} sur {{ pagination.pages.length }}</span>
+
+      {% if pagination.href.next %}
+      <a class="listing-pagination-link" href="{{ pagination.href.next }}">Suivant</a>
+      {% else %}
+      <span class="listing-pagination-link listing-pagination-link--disabled" aria-disabled="true">Suivant</span>
+      {% endif %}
+    </div>
+  </nav>
+  {% endif %}
 </section>
