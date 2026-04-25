@@ -20,6 +20,10 @@
   max-width: 70ch;
 }
 
+.text-section--full .text-section-body {
+  max-width: none;
+}
+
 /* -- Responsive -- */
 @media (max-width: 640px) {
   .text-section {

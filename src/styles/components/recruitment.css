@@ -1,0 +1,159 @@
+/* ── Page Nous rejoindre ── */
+.rejoindre-section {
+  padding: 3rem 2rem;
+}
+
+.rejoindre-text {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--color-night);
+}
+
+/* ── Boutons ── */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  border: 2px solid var(--color-primary);
+  transition: background-color 0.2s, color 0.2s;
+  align-self: flex-start;
+}
+
+.btn:hover {
+  background-color: var(--color-night);
+  border-color: var(--color-night);
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .rejoindre-section {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+}
+
+/* ── Pages de candidature ── */
+.inline-link {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.inline-link:hover {
+  color: var(--color-night);
+}
+
+.volunteer-jobs-section {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.volunteer-jobs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.job-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.job-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.job-card-link:hover .job-card {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 53, 87, 0.12);
+}
+
+.job-card-title {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.job-card-text {
+  line-height: 1.65;
+  color: var(--color-night);
+}
+
+.volunteer-contact-box {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #f8fafc;
+}
+
+.volunteer-contact-title {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+}
+
+.volunteer-contact-text {
+  line-height: 1.65;
+  color: var(--color-night);
+}
+
+.poste-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.poste-title {
+  font-size: 2rem;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.poste-resume {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-night);
+}
+
+.poste-back-link {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.poste-back-link:hover {
+  color: var(--color-night);
+}
+
+@media (max-width: 768px) {
+  .volunteer-jobs-section {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+}
