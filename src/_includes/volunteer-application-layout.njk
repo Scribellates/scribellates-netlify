@@ -1,0 +1,27 @@
+---
+layout: navbar.njk
+---
+
+<section class="volunteer-jobs-section">
+  <div class="volunteer-jobs-list">
+    <h1 class="text-section-title">Rejoindre en tant que benevole</h1>
+
+    {% for poste in collections.postes %}
+      <a class="job-card-link" href="{{ poste.url }}">
+        <article class="job-card">
+          <h2 class="job-card-title">{{ poste.data.title }}</h2>
+          <p class="job-card-text">{{ poste.data.resume }}</p>
+        </article>
+      </a>
+    {% endfor %}
+  </div>
+
+  <aside class="volunteer-contact-box">
+    <h2 class="volunteer-contact-title">Autres postes</h2>
+    <p class="volunteer-contact-text">
+      Si vous voulez nous aider d’une autre façon, n’hesitez pas à nous contacter et à nous expliquer comment vous souhaitez contribuer.
+    </p>
+    <a href="https://discord.gg/Gucqz2jgS9">Discord</a>
+    <a href="mailto:scribellates@outlook.fr?subject=Candidature%20benevole">scribellates@outlook.fr</a>
+  </aside>
+</section>

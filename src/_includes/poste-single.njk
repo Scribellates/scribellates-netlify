@@ -1,0 +1,20 @@
+---
+layout: navbar.njk
+---
+
+<article class="text-section">
+  <header class="poste-header">
+    <h1 class="poste-title">{{ title }}</h1>
+    {% if resume %}
+      <p class="poste-resume">{{ resume }}</p>
+    {% endif %}
+  </header>
+
+  <div class="text-section-body">
+    {{ content | safe }}
+  </div>
+
+  <p class="text-section-body">
+    <a class="poste-back-link" href="/rejoindre/benevoles/">Retour a la liste des postes benevoles</a>
+  </p>
+</article>
