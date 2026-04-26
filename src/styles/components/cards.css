@@ -132,12 +132,27 @@ a.card-oeuvre {
   font-size: 1rem;
   font-weight: 700;
   color: var(--color-primary);
+  margin: 0;
 }
 
 .card-actu-extrait {
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--color-night);
+  margin: 0;
+  flex: 1;
+}
+
+.card-actu-meta {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 0.55rem;
+  font-size: 0.8rem;
+  color: var(--color-moss);
+  margin-bottom: 0;
 }
 
 /* ── Page oeuvres : grille ── */
@@ -576,6 +591,52 @@ a.card-article {
   color: var(--color-moss);
 }
 
+.listing-pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.listing-pagination-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.listing-pagination-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  padding: 0.55rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #d2d7dc;
+  background-color: #f7f7f7;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.listing-pagination-link:hover {
+  background-color: #ffffff;
+  border-color: var(--color-ocre);
+  transform: translateY(-1px);
+}
+
+.listing-pagination-link--disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.listing-pagination-status {
+  font-size: 0.92rem;
+  color: var(--color-moss);
+  font-weight: 600;
+}
+
 /* ── Page article individuelle ── */
 .article-single {
   max-width: 820px;
@@ -668,6 +729,21 @@ a.card-article {
 
   .articles-card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .listing-pagination-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .listing-pagination-link {
+    min-width: 96px;
+  }
+
+  .listing-pagination-status {
+    width: 100%;
+    text-align: center;
   }
 
   .article-single {
@@ -879,6 +955,25 @@ a.card-article {
 .oeuvre-single-meta a {
   color: var(--color-primary);
   text-decoration: underline;
+}
+
+.oeuvre-single-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.oeuvre-single-tag {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid #d8dee4;
+  background-color: #ffffff;
+  color: var(--color-primary);
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 /* Suites */

@@ -17,9 +17,4 @@ colonnes:
     titre: Dernières oeuvres
   actualites:
     titre: Dernières actualités
-    items:
-      - titre: Titre de l'article
-        extrait: Résumé ou introduction de l'article pour inciter à la lecture complète.
-      - titre: Titre de l'article
-        extrait: Résumé ou introduction de l'article pour inciter à la lecture complète.
 ---

@@ -2,6 +2,14 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/styles");
   eleventyConfig.addPassthroughCopy({ "src/images": "images" });
 
+  eleventyConfig.addCollection("articlesByPublication", (collectionApi) =>
+    collectionApi.getFilteredByTag("articles").sort((a, b) => {
+      const dateA = new Date(a.data.datePublication ?? 0);
+      const dateB = new Date(b.data.datePublication ?? 0);
+      return dateB - dateA;
+    })
+  );
+
   eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit));
 
   eleventyConfig.addFilter("findOeuvreByUrl", (arr, url) => {
