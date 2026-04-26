@@ -37,9 +37,12 @@ Toute reproduction, représentation, modification, publication ou adaptation de 
 
 ## Données personnelles
 
-Scribellates ne collecte aucune donnée personnelle via ce site.
+Ce site ne collecte aucune donnée personnelle autre que celles strictement nécessaires à son fonctionnement et à la sécurité (logs techniques enregistrés automatiquement par l’hébergeur).
 
-Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Pour exercer ce droit, contactez-nous à : contact@scribellates.fr
+Les journaux techniques (logs) collectés automatiquement par l’hébergeur peuvent contenir votre adresse IP et des informations relatives à votre navigateur.
+Ces données sont traitées sur la base de l’intérêt légitime (sécurisation du site) et conservées pour une durée maximale de 12 mois.
+
+Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Pour exercer ce droit, contactez-nous à : scribellates@outlook.fr
 
 ---
 
