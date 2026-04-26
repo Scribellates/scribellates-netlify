@@ -8,6 +8,7 @@ on:
       - develop
       - 'feature/**'
       - 'fix/**'
+      - 'article/**'
 
 jobs:
   validate-data:
