@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/styles/components/cards.css" />
   <link rel="stylesheet" href="/styles/components/planning.css" />
   <link rel="stylesheet" href="/styles/components/recruitment.css" />
+  <link rel="stylesheet" href="/styles/components/footer.css" />
 </head>
 <body>
 
@@ -19,6 +20,8 @@
   <main>
     {{ content | safe }}
   </main>
+
+  {% include "components/footer/footer.njk" %}
 
 </body>
 </html>
