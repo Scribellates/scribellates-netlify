@@ -56,7 +56,7 @@ const oeuvreSchema = objectField({
   statut: enumField(STATUTS_OEUVRES, { caseInsensitive: true }),
   image: stringField({ validators: [pathPrefixRule('/images/covers/'), assetExistsRule] }),
   dateAjout: stringField({ validators: [isoDateRule] }),
-  tagsOeuvre: optional(arrayField(stringField())),
+  tags: optional(arrayField(stringField())),
   liens: optional(arrayField(lienSchema)),
   sections: optional(arrayField(sectionSchema)),
   suites: optional(arrayField(suiteSchema)),
