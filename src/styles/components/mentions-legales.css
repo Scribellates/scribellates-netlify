@@ -1,0 +1,61 @@
+/* ── Mentions légales ── */
+.mentions-legales {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.mentions-legales-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--color-ocre);
+}
+
+.mentions-legales-body h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.mentions-legales-body p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-night);
+  margin-bottom: 0.75rem;
+}
+
+.mentions-legales-body strong {
+  color: var(--color-night);
+}
+
+.mentions-legales-body a {
+  color: var(--color-primary);
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.mentions-legales-body a:hover {
+  color: var(--color-ocre);
+}
+
+.mentions-legales-body hr {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 2rem 0;
+}
+
+/* -- Responsive -- */
+@media (max-width: 640px) {
+  .mentions-legales {
+    padding: 2rem 1rem;
+  }
+
+  .mentions-legales-title {
+    font-size: 1.5rem;
+  }
+}
