@@ -2,7 +2,7 @@
 titre: Projet M-Land - Tome 1
 auteur:
   nom: Sololi
-  url: /auteurs/sololi
+  url: /auteurs/sololi/
 description: |
     « Si tu veux avoir une chance de survivre, alors tue. »
     C'est la règle à laquelle Thomas s'est retrouvé confronté lorsqu'il a été emmené de force dans un autre monde. Mia, la jeune fille qui l'a fait atterrir ici, n'éprouve aucun remords à massacrer des innocents, contrairement à Thomas qui refuse de tuer qui que ce soit.
@@ -19,7 +19,7 @@ liens:
     logo: /images/sites/wattpad.png
 suites:
   - titre: Projet M-Land - Tome 2
-    url: /oeuvres/m-land-2/
+    url: /oeuvres/projet-m-land-tome-2/
   - titre: Projet M-Land - Tome 3
-    url: /oeuvres/m-land-3/
+    url: /oeuvres/projet-m-land-tome-3/
 ---

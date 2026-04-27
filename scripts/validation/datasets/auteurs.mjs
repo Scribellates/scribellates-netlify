@@ -13,6 +13,7 @@ import {
   httpUrlRule,
   isoDateRule,
   pathPrefixRule,
+  trailingSlashForInternalPathRule,
 } from '../core/rules.mjs';
 
 const currentDirectory = path.dirname(fileURLToPath(import.meta.url));
@@ -22,7 +23,7 @@ const assetExistsRule = fileExistsFromWebPathRule({ projectRoot, sourceRoot: 'sr
 
 const oeuvreSchema = objectField({
   titre: stringField(),
-  url: stringField({ validators: [pathPrefixRule('/oeuvres/')] }),
+  url: stringField({ validators: [pathPrefixRule('/oeuvres/'), trailingSlashForInternalPathRule] }),
 });
 
 const sectionSchema = objectField({
@@ -32,7 +33,7 @@ const sectionSchema = objectField({
 
 const actualiteSchema = objectField({
   titre: stringField(),
-  url: stringField({ validators: [pathPrefixRule('/')] }),
+  url: stringField({ validators: [pathPrefixRule('/'), trailingSlashForInternalPathRule] }),
   date: stringField({ validators: [isoDateRule] }),
 });
 

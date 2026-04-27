@@ -2,7 +2,7 @@
 titre: Projet M-Land - Tome 3
 auteur:
   nom: Sololi
-  url: /auteurs/sololi
+  url: /auteurs/sololi/
 description: |
     Un évènement d'une ampleur encore jamais vu se prépare dans M-Land.
     Un évènement qui réuniras des candidats du monde entier.

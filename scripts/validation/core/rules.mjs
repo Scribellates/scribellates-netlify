@@ -47,6 +47,19 @@ export function pathPrefixRule(prefix) {
   );
 }
 
+export function trailingSlashForInternalPathRule(value) {
+  if (typeof value !== 'string' || value.length === 0 || !value.startsWith('/')) {
+    return null;
+  }
+
+  const pathname = value.split(/[?#]/, 1)[0];
+  if (pathname.endsWith('/')) {
+    return null;
+  }
+
+  return 'doit se terminer par "/" pour un chemin interne';
+}
+
 export function fileExistsFromWebPathRule({ projectRoot, sourceRoot = 'src' } = {}) {
   const sourceBaseDirectory = path.resolve(projectRoot, sourceRoot);
 

@@ -2,7 +2,7 @@
 titre: Projet M-Land - Tome 2
 auteur:
   nom: Sololi
-  url: /auteurs/sololi
+  url: /auteurs/sololi/
 description: |
     « C'est Noël. En cette période de fête, la tradition veut que l'on offre à ses proches des cadeaux. Plus précisément, "le père Noël" descend du ciel, fournissant ses présents. C'est aussi ce que je fais, j'apporte aux habitants de ce pays le meilleur des cadeaux. Je leur apporte la mort. »
 
@@ -20,5 +20,5 @@ liens:
     logo: /images/sites/wattpad.png
 suites:
   - titre: Projet M-Land - Tome 3
-    url: /oeuvres/m-land-3/
+    url: /oeuvres/projet-m-land-tome-3/
 ---

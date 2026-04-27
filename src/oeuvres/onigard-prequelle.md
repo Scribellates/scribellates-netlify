@@ -32,7 +32,7 @@ sections:
         ✅ Cette œuvre est considérée comme un bon point d'entrée à l'univers d'Onigard et est conseillée aux néophytes. ✅
 suites:
   - titre: Onigard - Apparition
-    url: /oeuvres/onigard-apparition
+    url: /oeuvres/onigard-apparition/
   - titre: Onigard - Solitude
-    url: /oeuvres/onigard-solitude
+    url: /oeuvres/onigard-solitude/
 ---

@@ -11,6 +11,7 @@ import {
 import {
   isoDateRule,
   pathPrefixRule,
+  trailingSlashForInternalPathRule,
 } from '../core/rules.mjs';
 
 const currentDirectory = path.dirname(fileURLToPath(import.meta.url));
@@ -20,8 +21,8 @@ const articleSchema = objectField({
   titre: stringField(),
   datePublication: stringField({ validators: [isoDateRule] }),
   redacteur: stringField(),
-  auteurs: optional(arrayField(stringField({ validators: [pathPrefixRule('/auteurs/')] }))),
-  oeuvres: optional(arrayField(stringField({ validators: [pathPrefixRule('/oeuvres/')] }))),
+  auteurs: optional(arrayField(stringField({ validators: [pathPrefixRule('/auteurs/'), trailingSlashForInternalPathRule] }))),
+  oeuvres: optional(arrayField(stringField({ validators: [pathPrefixRule('/oeuvres/'), trailingSlashForInternalPathRule] }))),
 });
 
 export const articlesDataset = createMarkdownFrontMatterDataset({
