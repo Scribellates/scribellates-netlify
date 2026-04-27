@@ -1,6 +1,6 @@
 ---
 title: Editeur
-resume: Aider a la relecture des contenus pour garantir la clarte, la fluidite et la qualite éditoriale des publications.
+resume: Aider à la relecture des contenus pour garantir la clarté, la fluidité et la qualité éditoriale des publications.
 ---
 
 ## Description du poste
@@ -16,7 +16,7 @@ Nous recrutons des éditeurs bénévoles pour accompagner nos auteurs dans l'am�
 
 ## Profil recherché
 
-aimer lire et avoir une sensibilité aux questions de style et de narration.
+Aimer lire et avoir une sensibilité aux questions de style et de narration.
 
 ## Candidature
 
