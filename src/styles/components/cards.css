@@ -595,6 +595,8 @@ a.card-article {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
+  border: 1px solid transparent;
+  background-color: transparent;
 }
 
 .listing-pagination-links {
@@ -612,8 +614,7 @@ a.card-article {
   min-width: 110px;
   padding: 0.55rem 0.8rem;
   border-radius: 8px;
-  border: 1px solid #d2d7dc;
-  background-color: #f7f7f7;
+  border: 2px solid var(--color-primary);
   color: var(--color-primary);
   text-decoration: none;
   font-weight: 600;
@@ -621,7 +622,7 @@ a.card-article {
 }
 
 .listing-pagination-link:hover {
-  background-color: #ffffff;
+  background-color: transparent;
   border-color: var(--color-ocre);
   transform: translateY(-1px);
 }
