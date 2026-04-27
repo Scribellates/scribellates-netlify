@@ -20,5 +20,5 @@ liens:
     logo: /images/sites/wattpad.png
 suites:
   - titre: Projet M-Land - Tome 3
-    url: /oeuvres/m-land-3
+    url: /oeuvres/m-land-3/
 ---
