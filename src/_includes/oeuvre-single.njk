@@ -69,14 +69,24 @@ layout: navbar.njk
           <dd><span class="card-oeuvre-statut card-oeuvre-statut--{{ statut | replace(' ', '-') | lower }}">{{ statut }}</span></dd>
         {% endif %}
         {% if tags %}
-          <dt>Tags</dt>
-          <dd>
-            <ul class="oeuvre-single-tags">
-              {% for tag in tags %}
-                <li><span class="oeuvre-single-tag">{{ tag }}</span></li>
-              {% endfor %}
-            </ul>
-          </dd>
+          {% set visibleTagsCount = 0 %}
+          {% for tag in tags %}
+            {% if tag != 'oeuvre' and tag != 'oeuvres' %}
+              {% set visibleTagsCount = visibleTagsCount + 1 %}
+            {% endif %}
+          {% endfor %}
+          {% if visibleTagsCount > 0 %}
+            <dt>Tags</dt>
+            <dd>
+              <ul class="oeuvre-single-tags">
+                {% for tag in tags %}
+                  {% if tag != 'oeuvre' and tag != 'oeuvres' %}
+                    <li><span class="oeuvre-single-tag">{{ tag }}</span></li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </dd>
+          {% endif %}
         {% endif %}
         {% if suites %}
           <dt>Suite(s)</dt>
