@@ -17,7 +17,7 @@ liens:
 sections:
   - title: L'univers d'Onigard
     content: |
-        Ceci est le premier tome des Chasseurs de l'Autre Monde, une trilogie au sein de l'univers d'Onigard suivant les âmes égarés de l'Autre Monde.
+        Ceci est le troisième tome des Chasseurs de l'Autre Monde, une trilogie au sein de l'univers d'Onigard suivant les âmes égarés de l'Autre Monde.
         Tome 1 : Prequelle
         Tome 2 : Apparition
         Tome 3 : Solitude

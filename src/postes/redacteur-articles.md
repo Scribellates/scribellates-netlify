@@ -1,6 +1,6 @@
 ---
-title: Redacteur d'articles
-resume: Participer a la redaction de contenus de presentation, actualites et mises en avant d'auteurs ou d'oeuvres.
+title: Rédacteur d'articles
+resume: Participer a la rédaction de contenus de presentation, actualites et mises en avant d'auteurs ou d'oeuvres.
 ---
 
 ## Description du poste
@@ -13,7 +13,7 @@ Nous recherchons un rédacteur d'articles bénévole pour alimenter notre blog e
 - Produire des contenus sur l'actualité du web novel francophone
 - Rédiger des présentations et portraits des auteurs membres de Scribellates
 
-## Profil recherche
+## Profil recherché
 
 Pas d'expérience précise, juste aimer les web novels et vouloir apprendre la rédaction en étant accompagné.
 

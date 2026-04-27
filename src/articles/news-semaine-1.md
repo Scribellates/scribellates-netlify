@@ -8,7 +8,7 @@ Première annonce que je fais de ce style et pas la dernière. Je vais en faire 
 
 # Quoi de nouveau ?
 ## La première version du site Scribellates
-Après trois semaines de développement, la première version du site Scribellates est enfin terminée et est disponible !
+Après trois semaines de développement, la première version du site Scribellates est enfin terminée !
 Il est accessible à l'url suivante : https://scribellates.netlify.app/
 
 Parmi les fonctionnalités disponibles, on y retrouve des informations sur les différentes oeuvres et auteurs membres de la structure, mais aussi un blog avec les dernières actualités des auteurs mais aussi de la structure.

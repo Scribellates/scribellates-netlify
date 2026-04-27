@@ -1,6 +1,6 @@
 ---
 title: Community manager
-resume: Animer nos reseaux sociaux, relayer les sorties et participer au developpement de la communaute Scribellates.
+resume: Animer nos reseaux sociaux, relayer les sorties et participer au développement de la communaute Scribellates.
 ---
 
 ## Description du poste
@@ -15,7 +15,7 @@ Pour développer notre présence en ligne, nous recherchons un community manager
 - Mettre en avant les auteurs et les œuvres de la plateforme
 - Interagir avec la communauté (répondre aux commentaires, suivre les tendances)
 
-## Profil recherche
+## Profil recherché
 
 Quelqu'un avec du temps libre et qui maîtrise au moins un des réseaux cités.
 
