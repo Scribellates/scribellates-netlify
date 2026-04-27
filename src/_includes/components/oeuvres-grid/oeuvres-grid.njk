@@ -33,6 +33,23 @@
     </a>
     {% endfor %}
   </div>
+  <template id="oeuvres-all-cards-template">
+    {% for oeuvre in collections.oeuvres %}
+    {% set auteurNom = oeuvre.data.auteur.nom or oeuvre.data.auteur %}
+    <a href="{{ oeuvre.url }}" class="card card-oeuvre card-oeuvre--grid"
+         data-titre="{{ oeuvre.data.titre | lower }}"
+         data-auteur="{{ auteurNom | lower }}"
+         data-statut="{{ oeuvre.data.statut | replace(' ', '-') | lower }}">
+      <img class="card-oeuvre-image card-oeuvre-image--grid" src="{{ oeuvre.data.image }}" alt="Couverture de {{ oeuvre.data.titre }}" />
+      <div class="card-oeuvre-body">
+        <h3 class="card-oeuvre-titre">{{ oeuvre.data.titre }}</h3>
+        <p class="card-oeuvre-auteur">{{ auteurNom }}</p>
+        <p class="card-oeuvre-extrait">{{ oeuvre.data.description }}</p>
+        <span class="card-oeuvre-statut card-oeuvre-statut--{{ oeuvre.data.statut | replace(' ', '-') | lower }}">{{ oeuvre.data.statut }}</span>
+      </div>
+    </a>
+    {% endfor %}
+  </template>
   <p class="oeuvres-no-results" id="oeuvres-no-results" hidden>Aucun résultat.</p>
 
   {% if pagination and pagination.pages and pagination.pages.length > 1 %}
@@ -58,39 +75,182 @@
 
 <script>
   (function () {
+    const section = document.querySelector('.oeuvres-grid-section');
     const input = document.getElementById('oeuvres-search');
-    const cards = document.querySelectorAll('#oeuvres-card-grid .card-oeuvre--grid');
+    const cardGrid = document.getElementById('oeuvres-card-grid');
+    const allCardsTemplate = document.getElementById('oeuvres-all-cards-template');
     const noResults = document.getElementById('oeuvres-no-results');
-    const filterBtns = document.querySelectorAll('.oeuvres-filter-btn');
-    let activeFilter = '';
+    const filterBtns = section ? section.querySelectorAll('.oeuvres-filter-btn') : [];
+    const paginationNav = section ? section.querySelector('.listing-pagination') : null;
+    const allCardsMarkup = allCardsTemplate ? allCardsTemplate.innerHTML : cardGrid.innerHTML;
+    const pageSize = 8;
 
-    function applyFilters() {
-      const query = input.value.toLowerCase().trim();
-      let visible = 0;
-
-      cards.forEach(function (card) {
-        const matchQuery =
-          card.dataset.titre.includes(query) ||
-          card.dataset.auteur.includes(query);
-        const matchFilter =
-          activeFilter === '' || card.dataset.statut === activeFilter;
-        const show = matchQuery && matchFilter;
-        card.style.display = show ? '' : 'none';
-        if (show) visible++;
-      });
-
-      noResults.hidden = visible > 0;
+    if (!section || !input || !cardGrid || !noResults) {
+      return;
     }
 
-    input.addEventListener('input', applyFilters);
+    let activeFilter = '';
+    let currentPage = 1;
+
+    function parseCards(markup) {
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = markup;
+      return Array.from(wrapper.querySelectorAll('.card-oeuvre--grid')).map(function (card) {
+        return {
+          titre: card.dataset.titre || '',
+          auteur: card.dataset.auteur || '',
+          statut: card.dataset.statut || '',
+          html: card.outerHTML
+        };
+      });
+    }
+
+    const allCardsDataset = parseCards(allCardsMarkup);
+    const datasetsByFilter = {
+      '': allCardsDataset,
+      'termine': allCardsDataset.filter(function (card) { return card.statut === 'termine'; }),
+      'terminé': allCardsDataset.filter(function (card) { return card.statut === 'termine' || card.statut === 'terminé'; }),
+      'en-cours': allCardsDataset.filter(function (card) { return card.statut === 'en-cours'; }),
+      'reecriture': allCardsDataset.filter(function (card) { return card.statut === 'reecriture'; }),
+      'réécriture': allCardsDataset.filter(function (card) { return card.statut === 'reecriture' || card.statut === 'réécriture'; })
+    };
+
+    function syncStateInUrl(query, filter) {
+      const url = new URL(window.location.href);
+
+      if (query) {
+        url.searchParams.set('q', query);
+      } else {
+        url.searchParams.delete('q');
+      }
+
+      if (filter) {
+        url.searchParams.set('statut', filter);
+      } else {
+        url.searchParams.delete('statut');
+      }
+
+      window.history.replaceState({}, '', url.toString());
+    }
+
+    function initStateFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const initialQuery = (params.get('q') || '').toLowerCase().trim();
+      const initialFilter = (params.get('statut') || '').toLowerCase().trim();
+      const hasMatchingFilterBtn = Array.from(filterBtns).some(function (btn) {
+        return btn.dataset.filter === initialFilter;
+      });
+
+      if (initialQuery) {
+        input.value = initialQuery;
+      }
+
+      if (hasMatchingFilterBtn) {
+        activeFilter = initialFilter;
+      }
+
+      filterBtns.forEach(function (btn) {
+        const isActive = btn.dataset.filter === activeFilter;
+        btn.classList.toggle('oeuvres-filter-btn--active', isActive);
+      });
+    }
+
+    function getBaseDatasetForFilter() {
+      return datasetsByFilter[activeFilter] || datasetsByFilter[''];
+    }
+
+    function getFilteredDataset(query) {
+      const baseDataset = getBaseDatasetForFilter();
+      if (!query) {
+        return baseDataset;
+      }
+
+      return baseDataset.filter(function (card) {
+        return card.titre.includes(query) || card.auteur.includes(query);
+      });
+    }
+
+    function renderPagination(totalItems) {
+      if (!paginationNav) {
+        return;
+      }
+
+      const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
+
+      if (totalPages <= 1) {
+        paginationNav.hidden = true;
+        paginationNav.innerHTML = '';
+        return;
+      }
+
+      paginationNav.hidden = false;
+      paginationNav.innerHTML =
+        '<div class="listing-pagination-links">' +
+        '<a class="listing-pagination-link' + (currentPage === 1 ? ' listing-pagination-link--disabled' : '') + '" href="#" data-pagination="prev" aria-disabled="' + (currentPage === 1 ? 'true' : 'false') + '">Precedent</a>' +
+        '<span class="listing-pagination-status">Page ' + currentPage + ' sur ' + totalPages + '</span>' +
+        '<a class="listing-pagination-link' + (currentPage === totalPages ? ' listing-pagination-link--disabled' : '') + '" href="#" data-pagination="next" aria-disabled="' + (currentPage === totalPages ? 'true' : 'false') + '">Suivant</a>' +
+        '</div>';
+
+      const prev = paginationNav.querySelector('[data-pagination="prev"]');
+      const next = paginationNav.querySelector('[data-pagination="next"]');
+
+      prev.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (currentPage === 1) {
+          return;
+        }
+
+        currentPage -= 1;
+        applyFilters(false);
+      });
+
+      next.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (currentPage === totalPages) {
+          return;
+        }
+
+        currentPage += 1;
+        applyFilters(false);
+      });
+    }
+
+    function applyFilters(resetPagination) {
+      const query = input.value.toLowerCase().trim();
+      const filteredDataset = getFilteredDataset(query);
+      const totalItems = filteredDataset.length;
+      const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
+
+      if (resetPagination) {
+        currentPage = 1;
+      } else if (currentPage > totalPages) {
+        currentPage = totalPages;
+      }
+
+      const start = (currentPage - 1) * pageSize;
+      const end = start + pageSize;
+      const pageItems = filteredDataset.slice(start, end);
+
+      cardGrid.innerHTML = pageItems.map(function (item) { return item.html; }).join('');
+      noResults.hidden = totalItems > 0;
+      syncStateInUrl(query, activeFilter);
+      renderPagination(totalItems);
+    }
+
+    input.addEventListener('input', function () {
+      applyFilters(true);
+    });
 
     filterBtns.forEach(function (btn) {
       btn.addEventListener('click', function () {
         filterBtns.forEach(function (b) { b.classList.remove('oeuvres-filter-btn--active'); });
         btn.classList.add('oeuvres-filter-btn--active');
         activeFilter = btn.dataset.filter;
-        applyFilters();
+        applyFilters(true);
       });
     });
+
+    initStateFromUrl();
+    applyFilters(true);
   })();
 </script>

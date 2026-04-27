@@ -26,7 +26,8 @@ planning:
       schedule:
         lundi: []
         mardi: []
-        mercredi: []
+        mercredi:
+          - oeuvreUrl: /oeuvres/projet-m-land-tome-3/
         jeudi: []
         vendredi: []
         samedi: []
