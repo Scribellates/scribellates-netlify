@@ -13,7 +13,7 @@ Nous sommes à la recherche d'un graphiste bénévole pour concevoir les couvert
 - Produire les visuels pour les réseaux sociaux (templates, illustrations, bannières…)
 - Veiller à la cohérence de l'identité visuelle de Scribellates (couleurs, typographie, style)
 
-## Profil recherche
+## Profil recherché
 
 Maitriser Photoshop, Illustrator, Canva ou être capable de réaliser du dessins numériques.
 

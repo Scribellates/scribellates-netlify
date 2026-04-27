@@ -10,7 +10,7 @@ description: |
 
     Mais tout change quand il se réveille dans un monde mystérieux... un monde où il risque de disparaître !?
 
-    Pour échapper à cette tragédie, il n'y a qu'une seule solution, se surpasser !
+    Pour échapper à cette tragédie, il n'y a qu'une seule solution : se surpasser !
 
     Cette course contre la montre l'entraînera dans une aventure fantaisiste remplie d'épreuves, de rencontres et de magie.
 statut: Terminé

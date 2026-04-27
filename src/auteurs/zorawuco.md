@@ -5,7 +5,7 @@ biographie: |
 
     En plus de mélanger action, magie, exploration, drame, comédie, mystère, je vise un style qui se veut dynamique et facile à suivre, des personnages haut en couleurs et des intrigues survoltées !
 
-    Je vous souhaite de trouver autant de plaisir à vivre ses histoires que j'en ai eu à les écrire.
+    Je vous souhaite de trouver autant de plaisir à vivre ces histoires que j'en ai eu à les écrire.
 image: /images/auteurs/zorawuco.jpg
 reseaux:
   - label: Wattpad

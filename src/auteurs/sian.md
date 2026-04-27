@@ -1,7 +1,7 @@
 ---
 nom: Sian
 biographie: |
-    J'aime bien raconter des histoires sur internet et aider les gens à progresser par ce que c'est toujours bien de construire quelque chose en étant accompagné. 
+    J'aime bien raconter des histoires sur internet et aider les gens à progresser parce que c'est toujours bien de construire quelque chose en étant accompagné. 
 
     J'essaye aussi de monter une petite structure du nom de Scribellates pour aider les auteurs amateurs publiant en ligne à se développer et s'améliorer.
 image: /images/auteurs/sian.jpg

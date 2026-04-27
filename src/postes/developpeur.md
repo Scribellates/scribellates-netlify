@@ -5,7 +5,7 @@ resume: Contribuer à l'amélioration du site, à l'intégration des contenus et
 
 ## Description du poste
 
-Nous cherchons des développeurs bénévoles, que ce soit front-end (UI/UX, intégration) ou back-end (serveur, base de données, API) dans le cadre de la maintenance du site ainsi que pour le developpement du site de publication.
+Nous cherchons des développeurs bénévoles, que ce soit front-end (UI/UX, intégration) ou back-end (serveur, base de données, API) dans le cadre de la maintenance du site ainsi que pour le développement du site de publication.
 
 ## Missions communes
 - Participer à la conception et au développement de la plateforme Scribellates
