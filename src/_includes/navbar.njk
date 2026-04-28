@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +14,14 @@
   <link rel="stylesheet" href="/styles/components/recruitment.css" />
   <link rel="stylesheet" href="/styles/components/footer.css" />
   <link rel="stylesheet" href="/styles/components/mentions-legales.css" />
+  <!--icones [Credit to favicon.io]-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-package/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-package/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-package/favicon-16x16.png">
+  <link rel="manifest" href="/favicon-package/site.webmanifest">
+
 </head>
+
 <body>
 
   {% include "components/navbar/navbar.njk" %}
@@ -23,6 +31,11 @@
   </main>
 
   {% include "components/footer/footer.njk" %}
-
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/service-worker.js");
+    }
+  </script>
 </body>
+
 </html>

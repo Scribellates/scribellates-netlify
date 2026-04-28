@@ -1,0 +1,23 @@
+{
+    "name": "Scribellates",
+    "short_name": "Scribellates",
+    "description": "L'espace de collaboration pour les auteurs de Web Novel",
+    "start_url": "/",
+    "orientation": "portrait-primary",
+    "lang": "fr",
+    "icons": [
+        {
+            "src": "/favicon-package/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon-package/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#1E3557",
+    "background_color": "#1E3557",
+    "display": "standalone"
+}
