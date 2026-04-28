@@ -1,6 +1,9 @@
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/styles");
   eleventyConfig.addPassthroughCopy({ "src/images": "images" });
+  eleventyConfig.addPassthroughCopy({ "src/favicon-package": "favicon-package" });
+  eleventyConfig.addPassthroughCopy({ "src/favicon-package/favicon.ico": "favicon.ico" });
+  eleventyConfig.addPassthroughCopy("src/service-worker.js");
 
   eleventyConfig.addCollection("articlesByPublication", (collectionApi) =>
     collectionApi.getFilteredByTag("articles").sort((a, b) => {
