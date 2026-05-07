@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - main
-      - master
-      - develop
-      - 'feature/**'
-      - 'fix/**'
-      - 'article/**'
+  pull_request:
+    branches:
+      - main
 
 jobs:
   validate-data:
