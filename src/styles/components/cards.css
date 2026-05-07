@@ -164,6 +164,7 @@ a.card-oeuvre {
 .oeuvres-search-wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-bottom: 1.5rem;
@@ -196,7 +197,7 @@ a.card-oeuvre {
 
 .oeuvres-filter-btn {
   padding: 0.5rem 1rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-family: var(--font-sans);
   color: var(--color-primary);
   background-color: var(--color-bg);
@@ -207,17 +208,19 @@ a.card-oeuvre {
 }
 
 .oeuvres-planning-link {
-  margin-left: auto;
   padding: 0.55rem 1rem;
   font-size: 0.9rem;
   font-family: var(--font-sans);
   font-weight: 600;
   color: var(--color-bg);
-  background-color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  background-color: var(--color-ocre);
+  border: 2px solid var(--color-ocre);
   border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  transform: translateY(0);
+  transition: background-color 0.2s, border-color 0.2s, transform 0.15s, box-shadow 0.15s;
 }
 
 .oeuvres-planning-link:hover {
@@ -742,8 +745,45 @@ a.card-article {
     min-width: 96px;
   }
 
+  .listing-pagination-link::before {
+    font-family: inherit;
+  }
+
+  .listing-pagination-links .listing-pagination-link:first-child::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    /* solid */
+    content: "\f053";
+    /* chevron-left */
+    margin-right: 0.35rem;
+  }
+
+  .listing-pagination-links .listing-pagination-link:last-child::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f054";
+    /* chevron-right */
+    margin-left: 0.35rem;
+  }
+
+
   .listing-pagination-status {
-    width: 100%;
+    text-align: center;
+  }
+
+  .listing-pagination-links .listing-pagination-link {
+    min-width: 56px;
+    padding: 0.75rem;
+    font-size: 0;
+    line-height: 0;
+  }
+
+  .listing-pagination-links .listing-pagination-link::before {
+    display: inline-block;
+    font-size: 1.05rem;
+    line-height: 1;
+    color: inherit;
+    width: 1em;
     text-align: center;
   }
 

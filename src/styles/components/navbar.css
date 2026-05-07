@@ -2,6 +2,7 @@
 nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 3rem;
   padding: 1rem 2rem;
   background-color: var(--color-primary);
@@ -11,16 +12,60 @@ nav {
   z-index: 100;
 }
 
+.nav-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .nav-logo {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
   text-decoration: none;
-  flex-shrink: 0;
 }
 
 .nav-logo img {
   height: 40px;
   width: auto;
+}
+
+.site-name {
+  color: var(--color-bg);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 0.4rem;
+  z-index: 101;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-bg);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
 }
 
 .nav-links {
@@ -52,6 +97,10 @@ nav {
     padding: 0.75rem 1.25rem;
   }
 
+  .site-name {
+    font-size: 1.1rem;
+  }
+
   .nav-links {
     gap: 1.5rem;
   }
@@ -60,14 +109,49 @@ nav {
 /* Mobile */
 @media (max-width: 640px) {
   nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
+    flex-wrap: wrap;
     padding: 0.75rem 1rem;
   }
 
+  .nav-toggle {
+    display: flex;
+  }
+
   .nav-links {
-    flex-wrap: wrap;
-    gap: 0.75rem 1.25rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--color-primary);
+    border-bottom: 3px solid var(--color-ocre);
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.active {
+    max-height: 300px;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links li:last-child a {
+    border-bottom: none;
+  }
+
+  .site-name {
+    font-size: 2.5rem;
   }
 }
+
