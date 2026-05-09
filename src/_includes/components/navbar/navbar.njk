@@ -1,12 +1,40 @@
 <nav>
-  <a href="/" class="nav-logo">
-    <img src="/images/logo_couleur_texte_inverse.png" alt="Scribellates logo" />
-  </a>
+  <div class="nav-brand">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo_couleur_texte_inverse.png" alt="Scribellates logo" />
+      <span class="site-name">Scribellates</span>
+    </a>
+  </div>
 
-  <ul class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <ul class="nav-links" id="navLinks">
     <li><a href="/oeuvres/">Oeuvres</a></li>
     <li><a href="/auteurs/">Auteurs</a></li>
     <li><a href="/actualites/">Actualités</a></li>
     <li><a href="/rejoindre/">Nous rejoindre</a></li>
   </ul>
 </nav>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  navToggle.addEventListener('click', function() {
+    navLinks.classList.toggle('active');
+    navToggle.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  const links = navLinks.querySelectorAll('a');
+  links.forEach(link => {
+    link.addEventListener('click', function() {
+      navLinks.classList.remove('active');
+      navToggle.classList.remove('active');
+    });
+  });
+</script>
