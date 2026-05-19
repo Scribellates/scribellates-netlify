@@ -2,6 +2,8 @@
 titre: News de la semaine n°1
 datePublication: 2026-04-26
 redacteur: Sian
+tagsArticle:
+  - annonce
 ---
 
 Première annonce que je fais de ce style et pas la dernière. Je vais en faire régulièrement (une par semaine, je l'espère), pour vous tenir informé de l'avancement sur l'évolution des différents projets.

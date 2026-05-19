@@ -21,6 +21,7 @@ const articleSchema = objectField({
   titre: stringField(),
   datePublication: stringField({ validators: [isoDateRule] }),
   redacteur: stringField(),
+  tagsArticle: optional(arrayField(stringField(), { minLength: 1 })),
   auteurs: optional(arrayField(stringField({ validators: [pathPrefixRule('/auteurs/'), trailingSlashForInternalPathRule] }))),
   oeuvres: optional(arrayField(stringField({ validators: [pathPrefixRule('/oeuvres/'), trailingSlashForInternalPathRule] }))),
 });
