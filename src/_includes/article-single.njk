@@ -12,6 +12,17 @@ layout: navbar.njk
     {{ content | safe }}
   </div>
 
+  {% if tagsArticle and tagsArticle.length %}
+    <section class="article-single-links">
+      <h2 class="article-single-links-title">Tags</h2>
+      <ul class="article-single-links-list">
+        {% for tag in tagsArticle %}
+          <li><a href="/actualites/?tag={{ tag }}">{{ tag }}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+
   {% if auteurs and auteurs.length %}
     <section class="article-single-links">
       <h2 class="article-single-links-title">Auteurs liés</h2>

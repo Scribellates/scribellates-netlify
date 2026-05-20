@@ -546,6 +546,47 @@ a.auteur-single-oeuvre-card {
   border-bottom: 2px solid var(--color-ocre);
 }
 
+.articles-tag-filter {
+  margin-bottom: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.articles-tag-filter-label {
+  color: var(--color-moss);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.articles-tag-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.articles-tag-filter-button {
+  border: 1px solid #d6dce4;
+  background-color: #ffffff;
+  color: var(--color-primary);
+  border-radius: 999px;
+  padding: 0.42rem 0.8rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+.articles-tag-filter-button:hover {
+  border-color: var(--color-ocre);
+  transform: translateY(-1px);
+}
+
+.articles-tag-filter-button--active {
+  border-color: var(--color-primary);
+  background-color: rgba(30, 53, 87, 0.1);
+}
+
 .articles-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -581,6 +622,24 @@ a.card-article {
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.card-article-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.card-article-tag {
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid #d6dce4;
+  background-color: #f8fafc;
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.52rem;
 }
 
 .card-article-meta {
@@ -637,6 +696,12 @@ a.card-article {
 
 .listing-pagination-status {
   font-size: 0.92rem;
+  color: var(--color-moss);
+  font-weight: 600;
+}
+
+.articles-empty-state {
+  margin-top: 1.4rem;
   color: var(--color-moss);
   font-weight: 600;
 }
@@ -733,6 +798,10 @@ a.card-article {
 
   .articles-card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .articles-tag-filter-button {
+    padding: 0.45rem 0.72rem;
   }
 
   .listing-pagination-links {
