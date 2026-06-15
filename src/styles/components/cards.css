@@ -116,6 +116,10 @@ a.card-oeuvre {
   color: #1a1a1a;
 }
 
+.card-oeuvre-statut--pause {
+  background-color: #7b1fa2;
+}
+
 /* ── Card actualité ── */
 .card-actu {
   display: flex;

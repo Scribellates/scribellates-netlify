@@ -31,9 +31,7 @@ planning:
         jeudi: []
         vendredi: []
         samedi: []
-        dimanche:
-          - oeuvreUrl: /oeuvres/onigard-prequelle/
-          - oeuvreUrl: /oeuvres/onigard-la-pyramide-de-dieu/
+        dimanche: []
     - id: webnovel
       name: WebNovel
       logo: /images/sites/webnovel.png
@@ -44,9 +42,7 @@ planning:
         jeudi: []
         vendredi: []
         samedi: []
-        dimanche:
-          - oeuvreUrl: /oeuvres/onigard-prequelle/
-          - oeuvreUrl: /oeuvres/onigard-apparition/
+        dimanche: []
     - id: purrfiction
       name: Purrfiction
       logo: /images/sites/purrfiction.png
@@ -57,6 +53,5 @@ planning:
         jeudi: []
         vendredi: []
         samedi: []
-        dimanche:
-          - oeuvreUrl: /oeuvres/onigard-prequelle/
+        dimanche: []
 ---
