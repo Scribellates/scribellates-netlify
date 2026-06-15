@@ -25,6 +25,7 @@ const STATUTS_OEUVRES = [
   'En cours',
   'Abandonné',
   'Réécriture',
+  'Pause',
 ];
 
 const assetExistsRule = fileExistsFromWebPathRule({ projectRoot, sourceRoot: 'src' });
