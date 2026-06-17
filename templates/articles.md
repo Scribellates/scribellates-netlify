@@ -6,6 +6,8 @@ redacteur: ...nom du redacteur...
   *- /auteurs/...auteur.../
 *oeuvres:
   *- /oeuvres/...oeuvre.../
+*tagsArticle:
+  *- tag
 ---
 
 ...contenu de l'article (Markdown)...
