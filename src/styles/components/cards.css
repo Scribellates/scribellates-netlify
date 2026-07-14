@@ -752,6 +752,28 @@ a.card-article {
   margin-top: 0.7rem;
 }
 
+.article-single-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1.5rem auto;
+  display: block;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.article-single-content img[style*="float"] {
+  margin: 0.5rem 1rem 0.5rem 0;
+}
+
+.article-single-content em:has(+ img),
+.article-single-content p:has(> img:only-child) em:only-child {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-moss);
+  margin-top: -1rem;
+}
+
 .article-single-links {
   display: flex;
   flex-direction: column;
