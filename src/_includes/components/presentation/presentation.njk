@@ -1,9 +1,39 @@
-<section class="presentation">
-  <div class="presentation-content">
-    <h1 class="presentation-title">{{ presentation.titre }}</h1>
-    <p class="presentation-text">{{ presentation.texte }}</p>
-  </div>
-  <div class="presentation-image">
-    <img src="{{ presentation.image }}" alt="{{ presentation.imageAlt }}" />
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-pen-fancy"></i>
+        Bienvenue
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-title-line">{{ presentation.titre }}</span>
+      </h1>
+      <p class="hero-text">{{ presentation.texte }}</p>
+      <div class="hero-actions">
+        <a href="#nous-rejoindre" class="hero-btn-primary">
+          <i class="fas fa-users"></i>
+          Nous rejoindre
+          <i class="fas fa-arrow-right hero-btn-icon"></i>
+        </a>
+      </div>
+      <div class="hero-scroll-indicator">
+        <span class="hero-scroll-text">Découvrir</span>
+        <div class="hero-scroll-line"></div>
+      </div>
+    </div>
+    <div class="hero-image-wrapper">
+      <div class="hero-image-container">
+        <img 
+          src="{{ presentation.image }}" 
+          alt="{{ presentation.imageAlt }}" 
+          class="hero-image"
+          loading="lazy"
+        />
+        <div class="hero-image-glow"></div>
+      </div>
+      <div class="hero-floating-element hero-floating-3">
+        <i class="fas fa-star"></i>
+      </div>
+    </div>
   </div>
 </section>
