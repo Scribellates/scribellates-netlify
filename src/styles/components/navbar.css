@@ -170,7 +170,7 @@ nav {
   }
 
   .site-name {
-    font-size: clamp(1rem, 4vw, 1.35rem);
+    font-size: clamp(1.5rem, 4vw, 1.35rem);
     line-height: 1.1;
     white-space: nowrap;
     overflow: hidden;
