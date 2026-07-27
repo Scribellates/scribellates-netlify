@@ -11,7 +11,9 @@
 
 /* ── Boutons ── */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.65rem 1.5rem;
   border-radius: 6px;
   font-size: 1rem;
@@ -22,7 +24,7 @@
   color: var(--color-bg);
   border: 2px solid var(--color-primary);
   transition: background-color 0.2s, color 0.2s;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .btn:hover {
@@ -155,5 +157,28 @@
   .volunteer-jobs-section {
     grid-template-columns: 1fr;
     padding: 2rem 1rem;
+  }
+}
+
+.rejoindre-section.two-cols {
+  display: flex;
+  gap: 2rem;
+  min-height: 80vh; /* ou 100vh selon vos besoins */
+  align-items: center; /* centrage vertical */
+  padding: 3rem 2rem;
+}
+
+/* Assurez-vous que les colonnes prennent toute la largeur disponible */
+.rejoindre-section.two-cols .col {
+  flex: 1;
+}
+
+/* Version responsive */
+@media (max-width: 768px) {
+  .rejoindre-section.two-cols {
+    flex-direction: column;
+    min-height: auto; /* sur mobile, on laisse le contenu s'étendre naturellement */
+    padding: 2rem 1rem;
+    gap: 2.5rem;
   }
 }

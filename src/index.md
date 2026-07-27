@@ -4,8 +4,8 @@ layout: home.njk
 
 presentation:
   titre: Qu'est ce que Scribellates ?
-  texte: L’objectif de cette structure est de proposer des aides pour ses auteurs de Web Novel. Cela va de l’aide à la promotion des œuvres ainsi que de l’auteur, à de l’aide à la publication en ligne, la mise en place d’un site de publication exclusif, de la bêta lecture, la traduction de chapitres, de l’aide à la réalisation de couvertures, et bien plus.
-  image: /images/logo.png
+  texte: L’objectif de Scribellates est de proposer des aides pour ses auteurs de Web Novel. Cela va de l’aide au développement des œuvres ainsi que de l’auteur, de création d'un espace d'échange bienveillant en ligne, la mise à disposition d’un site de publication exclusif, de la bêta lecture, de la traduction de chapitres, de l’aide à la réalisation de couvertures, et bien plus.
+  image: /images/hero_logo.png
   imageAlt: Logo de Scribellates
 
 texte:
