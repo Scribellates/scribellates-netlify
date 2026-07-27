@@ -1,5 +1,7 @@
 <div class="col">
-  <h2 class="col-title">{{ colonnes.actualites.titre }}</h2>
+  <div class="col-actualites-header">
+    <h2 class="col-title">{{ colonnes.actualites.titre }}</h2>
+  </div>
   <div class="card-list">
     {% for article in collections.articles | sortByDatePublication | limit(3) %}
     <a href="{{ article.url }}" class="card card-actu">
@@ -16,5 +18,6 @@
       <p class="card-actu-extrait">Ajoutez un article dans src/articles pour l'afficher ici.</p>
     </div>
     {% endfor %}
+    <a href="/actualites/" class="btn btn--secondary col-actualites-link" style="margin-top:2vh;">Voir toutes les actualités</a>
   </div>
 </div>

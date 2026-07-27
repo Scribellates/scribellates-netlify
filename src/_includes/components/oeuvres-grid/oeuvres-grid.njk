@@ -14,6 +14,16 @@
       <button class="oeuvres-filter-btn" data-filter="réécriture">Réécriture</button>
       <button class="oeuvres-filter-btn" data-filter="pause">Pause</button>
     </div>
+    <label class="oeuvres-filter-select-wrapper" for="oeuvres-status-select">
+      <span class="sr-only">Filtrer par statut</span>
+      <select id="oeuvres-status-select" class="oeuvres-filter-select" aria-label="Filtrer par statut">
+        <option value="">Tous</option>
+        <option value="terminé">Terminé</option>
+        <option value="en-cours">En cours</option>
+        <option value="réécriture">Réécriture</option>
+        <option value="pause">Pause</option>
+      </select>
+    </label>
     <a href="/planning/" class="oeuvres-planning-link">Voir le planning</a>
   </div>
   <h1 class="oeuvres-grid-title">Oeuvres</h1>
@@ -82,6 +92,7 @@
     const allCardsTemplate = document.getElementById('oeuvres-all-cards-template');
     const noResults = document.getElementById('oeuvres-no-results');
     const filterBtns = section ? section.querySelectorAll('.oeuvres-filter-btn') : [];
+    const filterSelect = section ? section.querySelector('.oeuvres-filter-select') : null;
     const paginationNav = section ? section.querySelector('.listing-pagination') : null;
     const allCardsMarkup = allCardsTemplate ? allCardsTemplate.innerHTML : cardGrid.innerHTML;
     const pageSize = 8;
@@ -113,7 +124,8 @@
       'terminé': allCardsDataset.filter(function (card) { return card.statut === 'termine' || card.statut === 'terminé'; }),
       'en-cours': allCardsDataset.filter(function (card) { return card.statut === 'en-cours'; }),
       'reecriture': allCardsDataset.filter(function (card) { return card.statut === 'reecriture'; }),
-      'réécriture': allCardsDataset.filter(function (card) { return card.statut === 'reecriture' || card.statut === 'réécriture'; })
+      'réécriture': allCardsDataset.filter(function (card) { return card.statut === 'reecriture' || card.statut === 'réécriture'; }),
+      'pause': allCardsDataset.filter(function (card) { return card.statut === 'pause' || card.statut === 'pause'; })
     };
 
     function syncStateInUrl(query, filter) {
@@ -154,6 +166,10 @@
         const isActive = btn.dataset.filter === activeFilter;
         btn.classList.toggle('oeuvres-filter-btn--active', isActive);
       });
+
+      if (filterSelect) {
+        filterSelect.value = activeFilter;
+      }
     }
 
     function getBaseDatasetForFilter() {
@@ -247,9 +263,22 @@
         filterBtns.forEach(function (b) { b.classList.remove('oeuvres-filter-btn--active'); });
         btn.classList.add('oeuvres-filter-btn--active');
         activeFilter = btn.dataset.filter;
+        if (filterSelect) {
+          filterSelect.value = activeFilter;
+        }
         applyFilters(true);
       });
     });
+
+    if (filterSelect) {
+      filterSelect.addEventListener('change', function () {
+        activeFilter = filterSelect.value;
+        filterBtns.forEach(function (btn) {
+          btn.classList.toggle('oeuvres-filter-btn--active', btn.dataset.filter === activeFilter);
+        });
+        applyFilters(true);
+      });
+    }
 
     initStateFromUrl();
     applyFilters(true);

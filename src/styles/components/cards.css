@@ -221,6 +221,26 @@ a.card-oeuvre {
   transition: border-color 0.2s, background-color 0.2s, color 0.2s;
 }
 
+.oeuvres-filter-select-wrapper {
+  display: none;
+}
+
+.oeuvres-filter-select {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 2px solid #e5e5e5;
+  border-radius: 8px;
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--color-primary) 50%), linear-gradient(135deg, var(--color-primary) 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 3px), calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
 .oeuvres-planning-link {
   padding: 0.55rem 1rem;
   font-size: 0.9rem;
@@ -257,6 +277,27 @@ a.card-oeuvre {
   color: var(--color-night);
   font-style: italic;
   margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .oeuvres-search-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .oeuvres-filter-group {
+    display: none;
+  }
+
+  .oeuvres-filter-select-wrapper {
+    display: block;
+    width: 100%;
+  }
+
+  .oeuvres-planning-link {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .oeuvres-grid-title {
@@ -1171,6 +1212,19 @@ a.card-article {
 }
 
 /* Actualités */
+.col-actualites-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.col-actualites-link {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.95rem;
+}
+
 .oeuvre-single-actualites {
   display: flex;
   flex-direction: column;

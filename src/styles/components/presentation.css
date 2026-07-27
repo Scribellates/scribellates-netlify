@@ -81,6 +81,7 @@
 .hero-text {
   font-size: 1.15rem;
   line-height: 1.8;
+  text-align: justify;
   color: #4a4a5a;
   max-width: 560px;
   opacity: 0.9;
@@ -300,7 +301,7 @@
 
   .hero-text {
     font-size: 1rem;
-    text-align: center;
+    text-align: justify;
     max-width: 100%;
   }
 
