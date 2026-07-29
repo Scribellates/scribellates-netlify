@@ -5,7 +5,15 @@ layout: navbar.njk
 <article class="article-single">
   <header class="article-single-header">
     <h1 class="article-single-title">{{ titre }}</h1>
-    <p class="article-single-meta">Publié le {{ datePublication | dateFormat }} · {{ redacteur }}</p>
+    <p class="article-single-meta">
+      <span class="article-single-meta-item">Publié le {{ datePublication | dateFormat }}</span>
+      {% if dateDerniereModification %}
+        <span class="article-single-meta-separator">·</span>
+        <span class="article-single-meta-item">Dernière modification le {{ dateDerniereModification | dateFormat }}</span>
+      {% endif %}
+      <span class="article-single-meta-separator">·</span>
+      <span class="article-single-meta-item">{{ redacteur }}</span>
+    </p>
   </header>
 
   <div class="article-single-content">
