@@ -22,36 +22,55 @@ Le premier pilier est un concept inventé : le « moteur thématique ». Les his
 
 3. Cette volonté entraîne une réaction en chaîne où l’auteur explore de nombreux questionnements (situationnels, philosophiques, sociologiques, psychologiques, politiques, etc.).
 
-Le moteur thématique, c’est l’expression de ces trois points : la situation initiale, le déclencheur et le thème central. Vous aurez dès lors une histoire solide.
+**Le moteur thématique, c’est l’expression de ces trois points : la situation initiale, le déclencheur et le thème central.** Vous aurez dès lors une histoire solide.
 
 Prenons deux exemples populaires aux structures très différentes : **One Piece** et **UnOrdinary**.
 
 Dans **One Piece**, le thème central est la liberté. Le moteur se met en route quand Luffy refuse l’existence par défaut imposée par un Gouvernement Mondial tyrannique et se lance à la conquête du titre de Roi des Pirates. À partir de là, l’auteur ne se contente pas de demander si la liberté est bonne ou mauvaise. Il utilise ce moteur pour générer des questionnements variés sur chaque île : sur le racisme et la ségrégation avec les Hommes-Poissons, sur la censure d’État et le droit d’effacer le passé, sur le poids de la lignée et la fatalité du destin. Vous ne lisez jamais deux fois la même histoire, mais chaque sous-intrigue nourrit le même moteur thématique.
 
-Dans **UnOrdinary**, le moteur tourne autour de la hiérarchie et du pouvoir. L’existence par défaut est celle de John, dans une société où les plus forts écrasent les plus faibles. Sa rébellion brise ce statu quo et débloque une matrice de questionnements profonds : les ravages du harcèlement et du stress post-traumatique, l’indifférence de l’élite, ou encore la question de savoir si l’on peut détruire une tyrannie sans devenir le monstre que l’on combattait.
+Dans **UnOrdinary**, le moteur tourne autour de la hiérarchie et de la responsabilité associé au pouvoir. L’existence par défaut est celle de John, dans une société où les plus forts écrasent les plus faibles. Sa rébellion brise ce statu quo et débloque une matrice de questionnements profonds : les ravages du harcèlement et du stress post-traumatique, l’indifférence de l’élite, ou encore la question de savoir si l’on peut détruire une tyrannie sans devenir le monstre que l’on combattait.
 
-Le moteur thématique ne tourne pas en rond autour d’une seule interrogation. Il fonctionne comme un prisme qui décompose votre thème principal en dizaines de branches éthiques, philosophiques ou politiques, offrant une matière inépuisable pour des centaines de chapitres.
+En revanche, le moteur thématique ne tourne pas en rond autour d’une seule interrogation. Il fonctionne comme un prisme qui décompose votre situation initiale en dizaines de branches éthiques, sociologique, philosophiques ou politiques, offrant une matière inépuisable pour des centaines de chapitres.
 
-Mais attention, le moteur thématique génère des questionnements, pas des réponses. Il ne dit pas ce qui est bien ou mal ; il oblige le lecteur et les personnages à confronter le thème sous des angles contradictoires.
+Mais attention, le moteur thématique génère des questionnements, pas des réponses. Il ne dit pas ce qui est bien ou mal ; il oblige le lecteur et les personnages à confronter le thème sous des angles contradictoires. Vous êtes comme un caméraman qui observe les êtres vivants de ton histoire.
 
 À votre tour de trouver votre moteur. Si vous y parvenez, accordez-vous un drapeau vert. Sinon, abandonnez l’idée. C’est la meilleure chose à faire.
 
 ## Pilier n°2 : la boucle de problème infinie
-Pas besoin de s’étendre autant que pour le pilier n°1. Il suffit d’avoir un moyen de causer plein de problèmes à vos protagonistes. Si, sur un coup de tête, vous êtes capable de créer de nombreuses épreuves pour leur rendre la vie difficile, alors vous tenez un puits de potentiel. Et si, pour résoudre un problème, ils doivent en résoudre encore plus, c’est le jackpot. Plus les héros ont de problèmes, plus il y aura de chapitres. Voilà un indicateur pratique.
+
+**Pour que votre histoire puisse s'étendre sur des centaines de chapitres sans s'essouffler, il vous faut un générateur d'épreuves intarissable.** C'est précisément le rôle de ce deuxième pilier : transformer chaque résolution en source de nouveaux problèmes.
+
+Deux outils peuvent nourrir cette mécanique. D'abord, la *Grande Liste des Intrigues de Jeu de Rôle* de S. John Ross, une boîte à outils gratuitement disponible sur internet et tiré du jeu de rôle qui recense des dizaine de conflits potentiels, des plus classiques aux plus absurdes, idéale pour pimenter votre récit à l'infini. Ensuite, le système des *36 situations dramatiques* de Georges Polti, qui catalogue toutes les situations conflictuelles fondamentales que la littérature et le théâtre ont exploitées depuis l'Antiquité. 
+
+Concrètement, on peut utiliser ces ressources comme un réservoir à idées : à chaque fois que vos personnages résolvent un problème, piochez dans ce vivier pour déclencher le suivant. Si votre héros a sauvé un village, peut-être se retrouve-t-il poursuivi par les hommes du seigneur local ou doit-il résoudre une énigme pour protéger son protégé.
+
+Le jackpot ? Quand chaque solution engendre naturellement deux ou trois nouvelles complications. Une résolution qui en appelle d'autres, dans une cascade vertigineuse. Plus les héros ont de problèmes, plus il y aura de chapitres. Voilà de quoi occupé tout le monde pendant un temps !
+
+Mais ce qui est bien avec la boucle de problème infinie, c'est qu'on a beaucoup de liberté sur les sources d'inspiration. Nous en avons proposé deux, mais nul doute que vous trouverez vos propre moyen de faire bouger vos précieux personnages !
+
+Ainsi, ce pilier transforme votre potentiel récit en un terrain de jeu où chaque action rebondit sur la précédente, pour créer une dynamique qui peut s'étendre bien au-delà de ce qu'on peut imaginer. C'est lui qui empêche l'intrigue de tourner en rond ou de s'épuiser prématurément, en maintenant un flux constant de défis pour vos personnages comme pour vos lecteurs.
 
 ## Pilier n°3 : les règles du jeu
-À ce stade, on cherche à clarifier l’idée en créant un cadre clairement défini dans lequel l’histoire pourra exister. Vous devez savoir ce qui est possible ou non dans le contexte de votre intrigue, dans quel genre de monde les choses se passent.
+Votre moteur thématique tourne, votre boucle à problèmes est prête. **Reste à définir le cadre : l’espace où votre histoire peut évoluer sans perdre sa cohérence.** Comme pour un jeu de société, il faut des règles claires pour éviter que chaque résolution ressemble à un deus ex machina. Voilà un plan en 5 étapes pour définir ces fameuses règles : 
 
-Voici comment procéder : énumérez les différentes situations que vous voulez faire vivre à vos personnages, voyez comment passer de l’une à l’autre, comment les mettre dans des problèmes apparemment insolubles. Identifiez ce qui fait que les protagonistes sont les protagonistes (ce qu’ils font mieux que tout le monde, et ce qu’ils apportent face au système, Quelle sont leurs croyances erronées également). Quelles sont les forces alliées et ennemies ? Qu’est-ce qui marquerait la victoire absolue ou la défaite absolue du héros (c’est-à-dire la fin de l’histoire) ? Pour finir, pourquoi ne pas ajouter un peu de backstory sur ce qui précède le début de l’œuvre pour vous aider dans l’immersion.
+1. Commencez par poser les limites de votre univers. Quelles lois physiques, sociales ou magiques le régissent ? Que peut-on y faire, et surtout, que ne peut-on pas y faire ? Si la magie existe, définissez son coût, ses risques, ses contraintes. Ce sont souvent ces limites qui rendent les personnages ingénieux.
 
-Dès que vous êtes capable de répondre à tout cela, vous avez bien clarifié votre idée et toutes les raisons légitimes de vous lancer sérieusement.
+2. Identifiez ensuite ce qui rend vos protagonistes uniques. Non pas parce qu’ils sont forcément les meilleurs, mais parce qu’ils sont les seuls à pouvoir affronter ce qui vient ou les seuls à oser par exemple. Définissez aussi leur croyance erronée. Cette conviction partiellement ou totalement biaisée qui les pousse à agir contre leurs propres intérêts, est un formidable moteur de conflit et d’évolution exploitée par les œuvres que nous connaissons tous.
+
+3. Cartographiez les forces en présence. Alliés, ennemis, factions, intérêts divergents : un écosystème dense nourrit votre boucle à problèmes. Chaque groupe a ses règles, ses objectifs, ses limites. Plus cet environnement est structuré, plus votre récit gagne en tension et en profondeur.
+
+4. Définissez enfin la victoire absolue et la défaite absolue. Ce sont les deux pôles entre lesquels votre histoire oscille. La victoire clôt l’objectif du héros ; la défaite met fin au récit. Ces bornes servent de boussole et donnent du sens à chaque étape.
+
+5. Et pour finir, ajoutez une couche de backstory : quelques événements passés qui ont façonné personnages, lieux et conflits. Pas besoin d’une encyclopédie, mais assez pour que votre monde existe avant le chapitre 1.
+
+Une fois ces éléments clarifiés, votre histoire possède un cadre solide, une cohérence interne et un terrain où votre boucle à problèmes peut se déployer sans trahir la logique de votre univers.
 
 ## Pilier n°4 : les arcs narratifs fondateurs
 Préparez-vous : voici l’ingrédient magique pour écrire une histoire aussi longue que vous voulez et surtout pour pouvoir l’arrêter proprement. En appliquant ce principe, vous pourriez théoriquement pondre aussi bien un Wattpad de 12 chapitres qu’un de plus de 100 chapitres, sans vous rendre malade.
 
 Vous souvenez-vous du troisième pilier ? Il va jouer un rôle essentiel. Comme le cycle de la vie, une histoire a un début, un milieu et une fin. Votre mission est de tenir vos lecteurs en haleine avec des arcs narratifs toujours plus surprenants. Pour valider que vous en êtes capable, vous devez avoir une vague idée des premiers arcs, ceux qui permettent aux lecteurs de savoir dans quoi ils mettent les pieds sans tout révéler. Servez-vous des premiers arcs comme d’un avant-goût de ce qui attend vos futurs fans.
 
-Dans cet article, un arc narratif est une partie de l’histoire qui se concentre sur une « grosse épreuve » menaçant l’identité du héros s’il échoue. Par exemple, un plombier qui doit sauver une princesse kidnappée par une tortue géante doit trouver comment accéder à un château perché dans le ciel, et pour cela rassembler un certain nombre d’étoiles. La chasse aux étoiles est la grosse épreuve. Cet arc offre un cadre pour explorer vos thèmes et vivre vos scénarios de rêve. Ensuite, créez d’autres épreuves à l’intérieur de l’épreuve pour obtenir encore plus d’arcs. Une fois qu’une épreuve est surmontée, offrez un temps de respiration (les fillers) avant de lancer un nouveau problème. Ainsi, vous évitez des problèmes de cohérence structurelle et vous vous concentrez sur la partie amusante.
+**Dans cet article, un arc narratif est une partie de l’histoire qui se concentre sur une « grosse épreuve » menaçant l’identité du héros s’il échoue.** Par exemple, un plombier qui doit sauver une princesse kidnappée par une tortue géante doit trouver comment accéder à un château perché dans le ciel, et pour cela rassembler un certain nombre d’étoiles. La chasse aux étoiles est la grosse épreuve. Cet arc offre un cadre pour explorer vos thèmes et vivre vos scénarios de rêve. Ensuite, créez d’autres épreuves à l’intérieur de l’épreuve pour obtenir encore plus d’arcs. Une fois qu’une épreuve est surmontée, offrez un temps de respiration (les fillers) avant de lancer un nouveau problème. Ainsi, vous évitez des problèmes de cohérence structurelle et vous vous concentrez sur la partie amusante.
 
 Nous avons une vague idée des arcs du début et du milieu. Mais comment faire pour la fin ?
 
@@ -78,7 +97,7 @@ N’hésitez pas à le transformer selon vos besoins. Ce n’est qu’un modèle
 
 > Jujutsu Kaisen : Quand Yuji Itadori — un lycéen ordinaire doté d’une force anormale — est forcé d’affronter le monde occulte après avoir avalé un doigt de Ryomen Sukuna, il doit apprendre l’art du jujutsu et retarder son exécution tout en faisant face à la malveillance des fléaux, aux manipulations des sorciers et à la menace interne de Sukuna, ce qui le contraint à s’engager dans des luttes qui le dépassent et où son intégrité et celle de ses proches seront constamment mises en jeu.
 
-Et vous, quelle tête aura votre logline ?
+Et vous, quelle tête aura votre logline ? Créer la vôtre et le tour est joué : vous tenez entre les mains les fondamentaux pour une histoire digne d'être racontée !
 
 ## Votre temple de validation en quelques phrases
 
@@ -98,3 +117,5 @@ Enfin, la **logline** vient couronner le tout comme un toit protecteur, résuman
 Avec cela, vous êtes fin prêt à vous plonger dans la merveilleuse aventure qu’est l’écriture d’une histoire.
 
 À très bientôt pour un prochain article !
+
+*Note de fin - un grand merci à [Sololi](/auteurs/sololi/) et [Sian](/auteurs/sian/) pour leur participation dans la rédaction de ce tout premier article !*
