@@ -843,12 +843,20 @@ a.card-article {
   font-size: 1.02rem;
   line-height: 1.75;
   color: var(--color-night);
+  text-align: justify;
+  text-justify: inter-word;
+  text-wrap: pretty;
 }
 
+.article-single-content h1,
 .article-single-content h2,
-.article-single-content h3 {
+.article-single-content h3,
+.article-single-content h4,
+.article-single-content h5,
+.article-single-content h6 {
   color: var(--color-primary);
   margin-top: 0.7rem;
+  text-align: left;
 }
 
 .article-single-content img {
