@@ -872,6 +872,30 @@ a.card-article {
   margin: 0.5rem 1rem 0.5rem 0;
 }
 
+.article-single-content pre {
+  width: 100%;
+  margin: 0.5rem 0 1rem;
+  padding: 1.25rem;
+  overflow-x: auto;
+  border: 1px solid rgba(217, 164, 65, 0.45);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fffdf7 0%, #f7f8f5 100%);
+  box-shadow: 0 8px 24px rgba(31, 42, 50, 0.08);
+  color: var(--color-night);
+  text-align: left;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: var(--font-serif);
+  font-size: clamp(0.82rem, 2.4vw, 0.98rem);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.article-single-content pre code {
+  font: inherit;
+  color: inherit;
+}
+
 .article-single-content em:has(+ img),
 .article-single-content p:has(> img:only-child) em:only-child {
   display: block;
@@ -991,6 +1015,14 @@ a.card-article {
 
   .article-single {
     padding: 2rem 0;
+  }
+
+  .article-single-content pre {
+    margin: 0.25rem -0.25rem 0.75rem;
+    padding: 1rem 0.9rem;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    line-height: 1.6;
   }
 
   .card-auteur {
