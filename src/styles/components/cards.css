@@ -126,8 +126,8 @@ a.card-oeuvre {
   gap: 0.65rem;
   padding: 1rem 1.15rem;
   background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
-  border-left: 4px solid var(--color-ocre);
-  border-right: 4px solid var(--color-ocre);
+  border-left: 2px solid var(--color-ocre);
+  border-right: 2px solid var(--color-ocre);
   min-height: 0;
 }
 
