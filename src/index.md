@@ -15,6 +15,6 @@ texte:
 colonnes:
   oeuvres:
     titre: Dernières oeuvres
-  actualites:
-    titre: Dernières actualités
+  posts:
+    titre: Derniers posts
 ---

@@ -15,6 +15,20 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit));
 
+  eleventyConfig.addFilter("articleTagCounts", (articles) => {
+    const counts = {};
+
+    for (const article of articles) {
+      const tags = Array.isArray(article.data.tagsArticle) ? article.data.tagsArticle : [];
+      for (const tag of tags) {
+        const key = String(tag).trim().toLowerCase();
+        if (key) counts[key] = (counts[key] ?? 0) + 1;
+      }
+    }
+
+    return JSON.stringify(counts);
+  });
+
   eleventyConfig.addFilter("findOeuvreByUrl", (arr, url) => {
     if (!Array.isArray(arr) || !url) return null;
     return arr.find((entry) => entry.url === url) ?? null;
