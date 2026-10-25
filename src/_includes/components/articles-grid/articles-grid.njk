@@ -1,5 +1,5 @@
 <section class="articles-grid-section">
-  <h1 class="articles-grid-title">Actualités</h1>
+  <h1 class="articles-grid-title">Posts</h1>
 
   <div class="articles-tag-filter js-articles-tag-filter" hidden>
     <p class="articles-tag-filter-label">Filtrer par tag</p>
@@ -7,7 +7,7 @@
   </div>
 
   <div class="articles-card-grid js-articles-card-grid">
-    {% for article in articlesPage %}
+    {% for article in collections.articlesByPublication %}
       {% set articleTags = article.data.tagsArticle or [] %}
       <a href="{{ article.url }}" class="card card-article">
         <div class="card-article-body js-article-card" data-tags="{{ articleTags | join('|') }}">
@@ -29,27 +29,14 @@
     {% endfor %}
   </div>
 
-  {% if pagination and pagination.pages and pagination.pages.length > 1 %}
-  <nav class="listing-pagination js-listing-pagination" aria-label="Pagination des actualites">
-    <div class="listing-pagination-links">
-      {% if pagination.href.previous %}
-      <a class="listing-pagination-link" href="{{ pagination.href.previous }}">Precedent</a>
-      {% else %}
-      <span class="listing-pagination-link listing-pagination-link--disabled" aria-disabled="true">Precedent</span>
-      {% endif %}
+  <nav
+    class="listing-pagination js-listing-pagination"
+    aria-label="Pagination des posts"
+    data-initial-page="{{ pagination.pageNumber + 1 }}"
+    hidden
+  ></nav>
 
-      <span class="listing-pagination-status">Page {{ pagination.pageNumber + 1 }} sur {{ pagination.pages.length }}</span>
-
-      {% if pagination.href.next %}
-      <a class="listing-pagination-link" href="{{ pagination.href.next }}">Suivant</a>
-      {% else %}
-      <span class="listing-pagination-link listing-pagination-link--disabled" aria-disabled="true">Suivant</span>
-      {% endif %}
-    </div>
-  </nav>
-  {% endif %}
-
-  <p class="articles-empty-state js-articles-empty-state" hidden>Aucun article ne correspond au tag selectionne sur cette page.</p>
+  <p class="articles-empty-state js-articles-empty-state" hidden>Aucun article ne correspond au tag selectionne.</p>
 </section>
 
 <script>
@@ -71,7 +58,6 @@
         .filter(Boolean);
 
       return {
-        card,
         wrapper: card.closest('.card-article'),
         tags,
       };
@@ -86,14 +72,17 @@
       }
     }
 
-    if (orderedUniqueTags.length === 0) {
-      return;
-    }
-
-    filterBlock.hidden = false;
+    filterBlock.hidden = orderedUniqueTags.length === 0;
 
     const queryTag = new URLSearchParams(window.location.search).get('tag');
     let activeTag = queryTag ? queryTag.trim().toLowerCase() : 'all';
+    const pagePathMatch = window.location.pathname.match(/\/page\/(\d+)(?:\/index\.html)?\/?$/);
+    const initialPage = Number(pagination.dataset.initialPage) || 1;
+    let currentPage = pagePathMatch ? Number(pagePathMatch[1]) : initialPage;
+    const basePath = window.location.pathname
+      .replace(/\/page\/\d+(?:\/index\.html)?\/?$/, '/')
+      .replace(/index\.html$/, '')
+      .replace(/\/?$/, '/');
 
     const buttonMap = new Map();
 
@@ -103,7 +92,8 @@
       }
     };
 
-    const updateUrl = () => {
+    const pageHref = (page) => {
+      const pagePath = page === 1 ? basePath : `${basePath}page/${page}/`;
       const params = new URLSearchParams(window.location.search);
 
       if (activeTag === 'all') {
@@ -113,40 +103,83 @@
       }
 
       const newSearch = params.toString();
-      const newUrl = `${window.location.pathname}${newSearch ? `?${newSearch}` : ''}${window.location.hash}`;
-      window.history.replaceState({}, '', newUrl);
+      return `${pagePath}${newSearch ? `?${newSearch}` : ''}${window.location.hash}`;
     };
 
-    const applyFilter = () => {
-      let visibleCount = 0;
+    const updateUrl = () => {
+      window.history.replaceState({}, '', pageHref(currentPage));
+    };
+
+    const createPageLink = (label, page) => {
+      const link = document.createElement('a');
+      link.className = 'listing-pagination-link';
+      link.href = pageHref(page);
+      link.textContent = label;
+      return link;
+    };
+
+    const createDisabledPageLabel = (label) => {
+      const text = document.createElement('span');
+      text.className = 'listing-pagination-link listing-pagination-link--disabled';
+      text.textContent = label;
+      text.setAttribute('aria-disabled', 'true');
+      return text;
+    };
+
+    const renderPagination = (totalPages) => {
+      pagination.replaceChildren();
+      pagination.hidden = totalPages <= 1;
+
+      if (pagination.hidden) {
+        return;
+      }
+
+      const links = document.createElement('div');
+      links.className = 'listing-pagination-links';
+      links.append(
+        currentPage > 1
+          ? createPageLink('Precedent', currentPage - 1)
+          : createDisabledPageLabel('Precedent')
+      );
+
+      const status = document.createElement('span');
+      status.className = 'listing-pagination-status';
+      status.textContent = `Page ${currentPage} sur ${totalPages}`;
+      links.append(status);
+
+      links.append(
+        currentPage < totalPages
+          ? createPageLink('Suivant', currentPage + 1)
+          : createDisabledPageLabel('Suivant')
+      );
+
+      pagination.append(links);
+    };
+
+    const render = () => {
+      const matchingCards = parsedCards.filter((item) =>
+        activeTag === 'all' || item.tags.some((tag) => tag.toLowerCase() === activeTag)
+      );
+      const pageSize = window.matchMedia('(max-width: 640px)').matches ? 8 : 12;
+      const totalPages = Math.max(1, Math.ceil(matchingCards.length / pageSize));
+      currentPage = Math.min(Math.max(currentPage, 1), totalPages);
+
+      const firstVisibleIndex = (currentPage - 1) * pageSize;
+      const visibleCards = new Set(matchingCards.slice(firstVisibleIndex, firstVisibleIndex + pageSize));
 
       for (const item of parsedCards) {
-        const matches =
-          activeTag === 'all' ||
-          item.tags.some((tag) => tag.toLowerCase() === activeTag);
-
-        if (item.wrapper) {
-          if (matches) {
-            item.wrapper.removeAttribute('hidden');
-            item.wrapper.style.display = '';
-          } else {
-            item.wrapper.hidden = true;
-            item.wrapper.style.display = 'none';
-          }
+        if (!item.wrapper) {
+          continue;
         }
 
-        if (matches) {
-          visibleCount += 1;
-        }
+        const isVisible = visibleCards.has(item);
+        item.wrapper.hidden = !isVisible;
+        item.wrapper.style.display = isVisible ? '' : 'none';
       }
 
-      if (emptyState) {
-        emptyState.hidden = visibleCount > 0;
-      }
-
-      if (pagination) {
-        pagination.hidden = activeTag !== 'all';
-      }
+      emptyState.hidden = matchingCards.length > 0;
+      renderPagination(totalPages);
+      updateUrl();
     };
 
     const createButton = (label, key) => {
@@ -157,9 +190,9 @@
       button.dataset.tag = key;
       button.addEventListener('click', () => {
         activeTag = key;
+        currentPage = 1;
         setActiveButton(key);
-        updateUrl();
-        applyFilter();
+        render();
       });
 
       buttonMap.set(key, button);
@@ -175,8 +208,10 @@
       activeTag = 'all';
     }
 
+    const mobileLayout = window.matchMedia('(max-width: 640px)');
+    mobileLayout.addEventListener('change', render);
+
     setActiveButton(activeTag);
-    updateUrl();
-    applyFilter();
+    render();
   })();
 </script>
