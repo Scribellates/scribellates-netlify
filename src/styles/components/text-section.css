@@ -106,6 +106,11 @@
   background-color: #FF6B00;
 }
 
+/* Pinterest - Rouge */
+.text-section-social-links a[aria-label*="Pinterest"] {
+  background-color: #E60023;
+}
+
 .text-section--full .text-section-body {
   max-width: none;
 }

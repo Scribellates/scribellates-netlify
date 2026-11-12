@@ -18,6 +18,7 @@ Vous pouvez aussi nous suivre et nous contacter via nos réseaux sociaux :
 
 - [X / Twitter](https://twitter.com/scribellates)
 - [Instagram](https://instagram.com/scribellates)
+- [Pinterest](https://fr.pinterest.com/scribellates/)
 
 ---
 
