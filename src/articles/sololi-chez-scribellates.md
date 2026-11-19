@@ -1,7 +1,8 @@
 ---
 titre: Sololi arrive chez les Scribellates avec Projet M-Land !
 datePublication: 2026-04-27
-redacteur: Sian
+redacteur: 
+  - Sian
 tagsArticle:
   - annonce
 auteurs:

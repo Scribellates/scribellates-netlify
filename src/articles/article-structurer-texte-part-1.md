@@ -1,7 +1,8 @@
 ---
 titre: Structurer son récit sans se perdre (1-2)
 datePublication: 2026-07-22
-redacteur: Zorawuco
+redacteur:
+  - Zorawuco
 tagsArticle:
   - conseils
 --- 

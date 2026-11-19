@@ -1,7 +1,8 @@
 ---
 titre: Lancement du site Scribellates
 datePublication: 2026-04-23
-redacteur: Sian
+redacteur:
+  - Sian
 tagsArticle:
   - annonce
 auteurs:

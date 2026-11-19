@@ -1,7 +1,8 @@
 ---
 titre: News Bimensuelles n°3 (02/06/2026 - 14/06/2026)
 datePublication: 2026-06-15
-redacteur: Sian
+redacteur: 
+  - Sian
 tagsArticle:
   - annonce
 ---

@@ -1,7 +1,8 @@
 ---
 titre: Nouveaux visuels pour Onigard
 datePublication: 2026-07-14
-redacteur: Sian
+redacteur: 
+  - Sian
 tagsArticle:
   - annonce
 auteurs:

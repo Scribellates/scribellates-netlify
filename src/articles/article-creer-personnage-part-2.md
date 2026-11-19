@@ -1,7 +1,8 @@
 ---
 titre: Façonner un personnage mémorable (2-2)
 datePublication: 2026-09-20
-redacteur: Zorawuco
+redacteur:
+  - Zorawuco
 tagsArticle:
   - conseils
 --- 
