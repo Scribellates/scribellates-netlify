@@ -1,7 +1,8 @@
 ---
 titre: News de la semaine n°1
 datePublication: 2026-04-26
-redacteur: Sian
+redacteur:
+  - Sian
 tagsArticle:
   - annonce
 ---

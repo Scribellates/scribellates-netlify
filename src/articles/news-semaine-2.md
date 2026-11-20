@@ -1,7 +1,8 @@
 ---
 titre: News de la semaine n°2
 datePublication: 2026-05-31
-redacteur: Sian
+redacteur: 
+  - Sian
 tagsArticle:
   - annonce
 ---

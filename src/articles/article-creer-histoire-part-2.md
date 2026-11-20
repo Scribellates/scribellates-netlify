@@ -2,7 +2,8 @@
 titre: Créer votre temple pour valider une idée de webnovel (2-2)
 datePublication: 2026-06-24
 dateDerniereModification: 2026-07-29
-redacteur: Zorawuco
+redacteur:
+  - Zorawuco
 tagsArticle:
   - conseils
 --- 
