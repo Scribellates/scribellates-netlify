@@ -22,7 +22,7 @@
           {% endif %}
           <p class="card-article-meta">
             <span>{{ article.data.datePublication | dateFormat }}</span>
-            <span>{{ article.data.redacteur }}</span>
+            <span>{% if article.data.redacteur is string %}{{ article.data.redacteur }}{% else %}{{ article.data.redacteur | join(", ") }}{% endif %}</span>
           </p>
         </div>
       </a>

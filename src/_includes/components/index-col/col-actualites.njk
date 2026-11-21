@@ -9,7 +9,7 @@
       <p class="card-actu-extrait">{{ article.templateContent | excerptFromMarkdown(500) }}</p>
       <p class="card-actu-meta">
         <span class="card-actu-date">{{ article.data.datePublication | dateFormat }}</span>
-        <span class="card-actu-redacteur">{{ article.data.redacteur }}</span>
+        <span class="card-actu-redacteur">{% if article.data.redacteur is string %}{{ article.data.redacteur }}{% else %}{{ article.data.redacteur | join(", ") }}{% endif %}</span>
       </p>
     </a>
     {% else %}
