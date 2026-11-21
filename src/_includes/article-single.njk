@@ -12,7 +12,7 @@ layout: navbar.njk
         <span class="article-single-meta-item">Dernière modification le {{ dateDerniereModification | dateFormat }}</span>
       {% endif %}
       <span class="article-single-meta-separator">·</span>
-      <span class="article-single-meta-item">{{ redacteur }}</span>
+      <span class="article-single-meta-item">{% if redacteur is string %}{{ redacteur }}{% else %}{{ redacteur | join(", ") }}{% endif %}</span>
     </p>
   </header>
 
